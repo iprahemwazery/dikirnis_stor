@@ -1,0 +1,229 @@
+{
+  "@@locale": "en",
+  "appName": "Dikirnis Store",
+  "homeHeadline": "Local services, close to home",
+  "homeSubtitle": "Discover trusted services and shops in Dikirnis.",
+  "locationLabel": "Dikirnis, Dakahlia",
+  "searchHint": "Search for a service",
+  "categoriesTitle": "Browse categories",
+  "providersCount": "{count, plural, =0{No providers} =1{1 provider} other{{count} providers}}",
+  "@providersCount": {
+    "description": "Number of service providers listed in a category.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "retry": "Try again",
+  "categoriesErrorMessage": "We could not load the categories. Please try again.",
+  "emptyCategoriesMessage": "No categories are available yet.",
+  "noSearchResults": "No services match your search.",
+  "pageNotFoundTitle": "Page not found",
+  "pageNotFoundMessage": "The page you are looking for does not exist or has moved.",
+  "backToHome": "Back to home",
+  "goodMorning": "Good morning",
+  "goodEvening": "Good evening",
+  "homeSearchHint": "Search for a restaurant, doctor, shop...",
+  "notificationsLabel": "Notifications",
+  "messagesLabel": "Messages",
+  "homeCategoriesTitle": "Categories",
+  "mostViewedTitle": "Most viewed this week",
+  "recentlyAddedTitle": "Recently added",
+  "medicalSectorTitle": "Medical sector",
+  "restaurantsCafesTitle": "Restaurants & cafes",
+  "viewAll": "View all",
+  "moreLabel": "More",
+  "newBadge": "New",
+  "verifiedBadge": "Verified",
+  "sponsoredBadge": "Sponsored",
+  "viewsLabel": "views",
+  "navHome": "Home",
+  "navExplore": "Explore",
+  "navMarketplace": "Marketplace",
+  "navOffers": "Offers",
+  "navProfile": "Profile",
+  "comingSoonMessage": "This feature will be available soon.",
+  "searchComingSoonMessage": "Full directory search is coming soon.",
+  "homeErrorMessage": "We could not load the home page. Please try again.",
+  "homeEmptyMessage": "There is nothing to show right now.",
+  "advertisementCloseLabel": "Dismiss advertisement",
+  "advertisementActionLabel": "Open advertisement",
+  "exploreTitle": "Categories",
+  "allCategoriesTitle": "All categories",
+  "subcategoriesCount": "{count, plural, =0{No subcategories} =1{1 subcategory} other{{count} subcategories}}",
+  "@subcategoriesCount": {
+    "description": "Number of subcategories listed in a category.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "promoOffersTitle": "Offers",
+  "promoOffersDescription": "Discover the best offers and discounts...",
+  "promoNewsTitle": "News",
+  "promoNewsDescription": "Follow the latest local and global news",
+  "promoMarketTitle": "Market prices",
+  "promoMarketDescription": "Prices of vegetables, meat and goods",
+  "promoJobsTitle": "Jobs",
+  "promoJobsDescription": "Browse open jobs and apply...",
+  "profileTitle": "Profile",
+  "profileEditProfile": "Edit profile",
+  "profileMemberSince": "Member since {year}",
+  "profileOrdersStat": "Orders",
+  "profileFavoritesStat": "Favorites",
+  "profileReviewsStat": "Reviews",
+  "profileAccountSection": "Account",
+  "profilePersonalInfo": "Personal information",
+  "profileMyOrders": "My orders",
+  "profileFavorites": "Favorites",
+  "profileAddresses": "My addresses",
+  "profileSettings": "Settings",
+  "profileActivitySection": "My activity",
+  "profileMyProfessionalFiles": "My professional files",
+  "profileMyListings": "My listings",
+  "profileMyReviews": "My reviews",
+  "profileSupportSection": "Support",
+  "profileHelpCenter": "Help center",
+  "profileContactUs": "Contact us",
+  "profileFaq": "FAQ",
+  "profilePrivacyPolicy": "Privacy policy",
+  "profileTerms": "Terms and conditions",
+  "profileEmergencyTitle": "In case of emergency",
+  "profileEmergencySubtitle": "Important emergency numbers available around the clock",
+  "profileEmergencySheetTitle": "Emergency numbers",
+  "profileEmergencyNote": "Direct calling will be available soon.",
+  "profileEmergencyAmbulance": "Ambulance",
+  "profileEmergencyPolice": "Police",
+  "profileEmergencyFire": "Fire department",
+  "profileLogout": "Log out",
+  "profileLogoutConfirmTitle": "Log out",
+  "profileLogoutConfirmMessage": "Are you sure you want to log out?",
+  "profileLogoutUnavailable": "There is no active session to log out of.",
+  "cancel": "Cancel",
+  "profileErrorMessage": "We could not load your profile. Please try again.",
+  "offersTitle": "Dikirnis Offers 🎁",
+  "offersSubtitle": "The best products and offers from Dikirnis stores",
+  "offersSearchHint": "Search offers...",
+  "offersAllCategory": "All",
+  "offersSectionTitle": "All offers",
+  "offersEmptyMessage": "There are no offers available right now.",
+  "offersNoSearchResults": "No offers match your search.",
+  "offersErrorMessage": "We could not load the offers. Please try again.",
+  "marketplaceTitle": "Dikirnis Marketplace",
+  "marketplaceSubtitle": "The best products and offers from Dikirnis stores",
+  "marketplaceSearchHint": "Search products or offers...",
+  "marketplaceSectionTitle": "Products & offers",
+  "marketplaceEmptyMessage": "There are no products available right now.",
+  "marketplaceNoSearchResults": "No products match your search.",
+  "marketplaceErrorMessage": "We could not load the products. Please try again.",
+  "offersFeaturedBadge": "Featured",
+  "offersDiscountValue": "{percent}% off",
+  "offersExpiresOn": "Ends {date}",
+  "offersAddFavorite": "Add to favorites",
+  "offersRemoveFavorite": "Remove from favorites",
+  "offersFavoriteError": "We could not update favorites. Please try again.",
+  "offersSortTooltip": "Sort results",
+  "offersSortTitle": "Sort results",
+  "offersSortRecommended": "Recommended",
+  "offersSortPriceLow": "Lowest price",
+  "offersSortPriceHigh": "Highest price",
+  "offersSortHighestDiscount": "Biggest discount",
+  "offersSortMostViewed": "Most viewed",
+  "offersSellProduct": "Sell a product",
+  "offersSellUnavailable": "Selling products will be available after the publishing service is connected.",
+  "offerDetailsTitle": "Offer details",
+  "offerDetailsDescriptionTitle": "About the offer",
+  "offerDetailsNotFound": "This offer could not be found.",
+  "productDetailsTitle": "Product details",
+  "productDetailsDescriptionTitle": "Product description",
+  "productDetailsNotFound": "This product could not be found.",
+  "offerDetailsSave": "Add to favorites",
+  "offerDetailsSaved": "Added to favorites",
+  "offerDetailsDiscountLabel": "Discount",
+  "offerDetailsExpiryLabel": "Ends",
+  "offerDetailsViewsLabel": "Views",
+  "offerDetailsPublishedLabel": "Published {date}",
+  "offerDetailsAvailabilityLabel": "Availability",
+  "offerDetailsAvailable": "Available",
+  "offerDetailsUnavailable": "Unavailable",
+  "offerDetailsOriginalPriceLabel": "Price before discount",
+  "offerGalleryCounter": "{current} / {total}",
+  "offerShareTooltip": "Copy product information",
+  "offerShareCopied": "Product information copied.",
+  "offerSellerTitle": "Seller information",
+  "offerSellerVerified": "Verified seller",
+  "offerSellerMemberSince": "Member since {year}",
+  "offerContactCall": "Call",
+  "offerContactWhatsapp": "WhatsApp",
+  "offerContactUnavailable": "Contact number is unavailable.",
+  "offerContactCopied": "Contact number copied.",
+  "offerCommentsTitle": "Comments",
+  "offerCommentsEmpty": "No comments yet.",
+  "offerCommentHint": "Add a comment...",
+  "offerCommentSend": "Send",
+  "offerCommentEmptyError": "Write a comment first.",
+  "offerCommentUnavailable": "Adding comments is unavailable until the comments service is connected.",
+  "offerAiTitle": "Smart guidance",
+  "offerAiPreviewNote": "Local preview — the recommendation service is not connected yet.",
+  "offerAiStrongDiscount": "This offer has a strong discount. Review the expiry date and seller details before ordering.",
+  "offerAiCompare": "Compare this offer with similar products and confirm your needs before ordering.",
+  "offerSimilarTitle": "Similar products",
+  "offerOrderNow": "Order now",
+  "offerOrderUnavailableTitle": "Ordering unavailable",
+  "offerOrderUnavailableMessage": "The ordering service is not connected yet, and no order was submitted.",
+  "currencyEgp": "EGP",
+  "ok": "OK",
+  "@profileMemberSince": {
+    "description": "Year the user joined the platform.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "@offersDiscountValue": {
+    "description": "Discount percentage shown on offer cards.",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "@offersExpiresOn": {
+    "description": "Offer expiry date shown on offer cards.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@offerDetailsPublishedLabel": {
+    "description": "Product publish date shown in product details.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@offerGalleryCounter": {
+    "description": "Current image position and total number of product images.",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@offerSellerMemberSince": {
+    "description": "Year the seller joined the marketplace.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  }
+}

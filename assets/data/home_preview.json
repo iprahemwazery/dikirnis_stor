@@ -1,0 +1,240 @@
+{
+  "user_name": "أحمد محمود",
+  "user_location": "دكرنس، الدقهلية",
+  "banners": [
+    {
+      "id": "banner_restaurants",
+      "title": "مذاق دكرنس",
+      "subtitle": "أفضل المطاعم والكافيهات بخصومات تصل إلى 30%",
+      "image": "assets/images/banners/banner_restaurants.jpg"
+    },
+    {
+      "id": "banner_medical",
+      "title": "صحتك أولاً",
+      "subtitle": "احجز عند أفضل الأطباء والعيادات القريبة منك",
+      "image": "assets/images/banners/banner_medical.jpg"
+    },
+    {
+      "id": "banner_services",
+      "title": "كل خدمات البيت",
+      "subtitle": "فنيون موثوقون للسباكة والكهرباء والصيانة",
+      "image": "assets/images/banners/banner_services.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "commercial_sales",
+      "name": "المبيعات التجارية",
+      "icon_key": "point_of_sale"
+    },
+    {
+      "id": "restaurants_cafes",
+      "name": "مطاعم وكافيهات",
+      "icon_key": "restaurant"
+    },
+    {
+      "id": "medical",
+      "name": "القطاع الطبي",
+      "icon_key": "medical"
+    },
+    {
+      "id": "jobs",
+      "name": "التوظيف",
+      "icon_key": "work"
+    },
+    {
+      "id": "sports",
+      "name": "رياضة وترفيه",
+      "icon_key": "sports"
+    },
+    {
+      "id": "home_goods",
+      "name": "خيرات البيت",
+      "icon_key": "home_goods"
+    },
+    {
+      "id": "services",
+      "name": "الخدمات",
+      "icon_key": "services"
+    },
+    {
+      "id": "education",
+      "name": "تعليم و تدريب",
+      "icon_key": "education"
+    },
+    {
+      "id": "more",
+      "name": "عرض المزيد",
+      "icon_key": "add",
+      "is_more": true
+    },
+    {
+      "id": "government",
+      "name": "مصالح حكومية",
+      "icon_key": "government"
+    },
+    {
+      "id": "religion_society",
+      "name": "الدين والمجتمع",
+      "icon_key": "religion"
+    },
+    {
+      "id": "transport",
+      "name": "النقل والتوصيل",
+      "icon_key": "transport"
+    }
+  ],
+  "most_viewed": [
+    {
+      "id": "fish_house",
+      "name": "أسماك النيل",
+      "location": "شارع الجيش، دكرنس",
+      "image": "assets/images/businesses/fish_house.jpg",
+      "rating": 4.8,
+      "views": 1840,
+      "rank": 1
+    },
+    {
+      "id": "cafe_lounge",
+      "name": "كافيه لاونج",
+      "location": "ميدان الساعة، دكرنس",
+      "image": "assets/images/businesses/cafe.jpg",
+      "rating": 4.7,
+      "views": 1520,
+      "rank": 2
+    },
+    {
+      "id": "shifa_center",
+      "name": "مركز الشفاء الطبي",
+      "location": "شارع المستشفى، دكرنس",
+      "image": "assets/images/businesses/clinic.jpg",
+      "rating": 4.9,
+      "views": 1310,
+      "rank": 3
+    },
+    {
+      "id": "gym_plus",
+      "name": "جيم بلس",
+      "location": "شارع بورسعيد، دكرنس",
+      "image": "assets/images/businesses/gym.jpg",
+      "rating": 4.6,
+      "views": 980,
+      "rank": 4
+    }
+  ],
+  "advertisement": {
+    "id": "crocodile",
+    "advertiser_name": "Crocodile",
+    "description": "خصومات تصل إلى 30% على مستلزمات المنزل والمطبخ هذا الأسبوع.",
+    "logo_icon_key": "storefront"
+  },
+  "recently_added": [
+    {
+      "id": "harmain_bakery",
+      "name": "مخبز الحرمين",
+      "location": "شارع الترعة، دكرنس",
+      "image": "assets/images/businesses/bakery.jpg",
+      "rating": 4.7,
+      "views": 310,
+      "is_new": true
+    },
+    {
+      "id": "techno_store",
+      "name": "تكنو ستور",
+      "location": "شارع الجمهورية، دكرنس",
+      "image": "assets/images/businesses/electronics.jpg",
+      "rating": 4.5,
+      "views": 260,
+      "is_new": true
+    },
+    {
+      "id": "beauty_touch",
+      "name": "صالون لمسة جمال",
+      "location": "حي الزهور، دكرنس",
+      "image": "assets/images/businesses/salon.jpg",
+      "rating": 4.6,
+      "views": 225,
+      "is_new": true
+    },
+    {
+      "id": "amana_market",
+      "name": "سوبرماركت الأمانة",
+      "location": "شارع النصر، دكرنس",
+      "image": "assets/images/businesses/grocery.jpg",
+      "rating": 4.8,
+      "views": 190,
+      "is_new": true
+    }
+  ],
+  "medical": [
+    {
+      "id": "shifa_medical_center",
+      "name": "مركز الشفاء الطبي",
+      "location": "شارع المستشفى، دكرنس",
+      "image": "assets/images/businesses/clinic.jpg",
+      "rating": 4.9,
+      "description": "عيادات باطنة وأطفال وأشعة",
+      "is_verified": true
+    },
+    {
+      "id": "sara_dental",
+      "name": "عيادة د. سارة للأسنان",
+      "location": "شارع الجيش، دكرنس",
+      "image": "assets/images/businesses/dentist.jpg",
+      "rating": 4.8,
+      "description": "تجميل وزراعة وتقويم الأسنان",
+      "is_verified": true
+    },
+    {
+      "id": "noor_pharmacy",
+      "name": "صيدلية النور",
+      "location": "ميدان الساعة، دكرنس",
+      "image": "assets/images/businesses/pharmacy.jpg",
+      "rating": 4.7,
+      "description": "توصيل الأدوية على مدار اليوم",
+      "is_sponsored": true
+    },
+    {
+      "id": "dikirnis_lab",
+      "name": "معمل دكرنس للتحاليل",
+      "location": "شارع بورسعيد، دكرنس",
+      "image": "assets/images/businesses/lab.jpg",
+      "rating": 4.6,
+      "description": "تحاليل طبية دقيقة ونتائج سريعة"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "nile_fish",
+      "name": "أسماك النيل",
+      "location": "شارع الجيش، دكرنس",
+      "image": "assets/images/businesses/fish_house.jpg",
+      "rating": 4.8,
+      "description": "مأكولات بحرية طازجة ومشويات"
+    },
+    {
+      "id": "east_grill",
+      "name": "مشويات الشرق",
+      "location": "شارع الجمهورية، دكرنس",
+      "image": "assets/images/businesses/grill.jpg",
+      "rating": 4.6,
+      "description": "كباب ومشويات على الفحم"
+    },
+    {
+      "id": "cafe_lounge_restaurant",
+      "name": "كافيه لاونج",
+      "location": "ميدان الساعة، دكرنس",
+      "image": "assets/images/businesses/cafe.jpg",
+      "rating": 4.7,
+      "description": "قهوة مختصة وحلويات طازجة"
+    },
+    {
+      "id": "east_sweets",
+      "name": "حلويات الشرق",
+      "location": "شارع النصر، دكرنس",
+      "image": "assets/images/businesses/dessert.jpg",
+      "rating": 4.9,
+      "description": "حلويات شرقية وغربية طازجة"
+    }
+  ]
+}

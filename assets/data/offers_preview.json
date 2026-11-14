@@ -1,0 +1,451 @@
+{
+  "categories": [
+    {
+      "id": "education",
+      "name_ar": "تعليم وتدريب",
+      "name_en": "Education & training",
+      "icon_key": "education",
+      "subcategories_count": 10
+    },
+    {
+      "id": "beauty",
+      "name_ar": "صحة وجمال",
+      "name_en": "Health & beauty",
+      "icon_key": "beauty",
+      "subcategories_count": 0
+    },
+    {
+      "id": "medical",
+      "name_ar": "القطاع الطبي",
+      "name_en": "Medical sector",
+      "icon_key": "medical",
+      "subcategories_count": 2
+    },
+    {
+      "id": "restaurants",
+      "name_ar": "المطاعم والكافيهات",
+      "name_en": "Restaurants & cafes",
+      "icon_key": "restaurant",
+      "subcategories_count": 16
+    },
+    {
+      "id": "commercial",
+      "name_ar": "المحلات التجارية",
+      "name_en": "Commercial stores",
+      "icon_key": "commercial",
+      "subcategories_count": 25
+    },
+    {
+      "id": "sports",
+      "name_ar": "رياضة وترفيه",
+      "name_en": "Sports & entertainment",
+      "icon_key": "sports",
+      "subcategories_count": 6
+    },
+    {
+      "id": "services",
+      "name_ar": "الخدمات",
+      "name_en": "Services",
+      "icon_key": "services",
+      "subcategories_count": 4
+    },
+    {
+      "id": "transport",
+      "name_ar": "النقل والتوصيل",
+      "name_en": "Transport & delivery",
+      "icon_key": "transport",
+      "subcategories_count": 5
+    }
+  ],
+  "offers": [
+    {
+      "id": "offer_techno_training",
+      "business_name": "مركز تكنو للتدريب",
+      "title": "خصم 40% على دورات البرمجة",
+      "description": "دورات عملية في تطوير الويب وتطبيقات الموبايل مع شهادة معتمدة.",
+      "image": "assets/images/businesses/electronics.jpg",
+      "category_id": "education",
+      "discount_percent": 40,
+      "expires_at": "2026-12-31",
+      "views": 286,
+      "is_featured": true,
+      "price": 900,
+      "original_price": 1500,
+      "images": [
+        "assets/images/businesses/electronics.jpg",
+        "assets/images/businesses/lab.jpg",
+        "assets/images/banners/banner_services.jpg"
+      ],
+      "published_at": "2026-11-01",
+      "is_available": true,
+      "seller": {
+        "id": "seller_techno_training",
+        "name": "مركز تكنو للتدريب",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2023"
+      },
+      "comments": [
+        {
+          "id": "comment_techno_1",
+          "author_name": "محمود ع.",
+          "body": "دورة منظمة وشرح واضح، استفدت منها في مشروعي الأول.",
+          "created_at": "2026-11-08",
+          "rating": 5
+        },
+        {
+          "id": "comment_techno_2",
+          "author_name": "سارة م.",
+          "body": "المدرب متعاون والمواعيد مناسبة. أنصح بها للمبتدئين.",
+          "created_at": "2026-11-10",
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "id": "offer_beauty_hair",
+      "business_name": "صالون لمسة جمال",
+      "title": "خصم 25% على العناية بالشعر",
+      "description": "قص وتصفيف وعلاجات للشعر بأيدي خبيرات.",
+      "image": "assets/images/businesses/salon.jpg",
+      "category_id": "beauty",
+      "discount_percent": 25,
+      "expires_at": "2026-11-30",
+      "views": 198,
+      "is_featured": true,
+      "price": 300,
+      "original_price": 400,
+      "images": [
+        "assets/images/businesses/salon.jpg"
+      ],
+      "published_at": "2026-11-03",
+      "is_available": true,
+      "seller": {
+        "id": "seller_beauty_hair",
+        "name": "صالون لمسة جمال",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2024"
+      },
+      "comments": [
+        {
+          "id": "comment_beauty_1",
+          "author_name": "هبة أ.",
+          "body": "الخدمة ممتازة والنتيجة طبيعية جدًا.",
+          "created_at": "2026-11-09",
+          "rating": 5
+        }
+      ]
+    },
+    {
+      "id": "offer_shifa_checkup",
+      "business_name": "مركز الشفاء الطبي",
+      "title": "خصم 20% على الفحوصات الشاملة",
+      "description": "باقة فحوصات شاملة وأشعة بأسعار مخفضة لفترة محدودة.",
+      "image": "assets/images/businesses/clinic.jpg",
+      "category_id": "medical",
+      "discount_percent": 20,
+      "expires_at": "2026-12-15",
+      "views": 245,
+      "is_featured": true,
+      "price": 640,
+      "original_price": 800,
+      "images": [
+        "assets/images/businesses/clinic.jpg",
+        "assets/images/businesses/lab.jpg",
+        "assets/images/banners/banner_medical.jpg"
+      ],
+      "published_at": "2026-11-02",
+      "is_available": true,
+      "seller": {
+        "id": "seller_shifa",
+        "name": "مركز الشفاء الطبي",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2022"
+      },
+      "comments": [
+        {
+          "id": "comment_shifa_1",
+          "author_name": "أحمد س.",
+          "body": "الفحوصات شاملة والنتائج ظهرت بسرعة.",
+          "created_at": "2026-11-07",
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "id": "offer_sara_dental",
+      "business_name": "عيادة د. سارة للأسنان",
+      "title": "خصم 30% على تبييض الأسنان",
+      "description": "جلسة تبييض احترافية بجهاز حديث ونتائج فورية.",
+      "image": "assets/images/businesses/dentist.jpg",
+      "category_id": "medical",
+      "discount_percent": 30,
+      "expires_at": "2026-12-20",
+      "views": 176,
+      "is_featured": false,
+      "price": 420,
+      "original_price": 600,
+      "images": [
+        "assets/images/businesses/dentist.jpg",
+        "assets/images/businesses/clinic.jpg"
+      ],
+      "published_at": "2026-11-04",
+      "is_available": true,
+      "seller": {
+        "id": "seller_sara_dental",
+        "name": "عيادة د. سارة للأسنان",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2024"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_east_grill",
+      "business_name": "مشويات الشرق",
+      "title": "خصم 15% على الوجبات العائلية",
+      "description": "وجبات مشويات على الفحم تكفي العائلة.",
+      "image": "assets/images/businesses/grill.jpg",
+      "category_id": "restaurants",
+      "discount_percent": 15,
+      "expires_at": "2026-11-25",
+      "views": 312,
+      "is_featured": false,
+      "price": 298,
+      "original_price": 350,
+      "images": [
+        "assets/images/businesses/grill.jpg",
+        "assets/images/businesses/fish_house.jpg",
+        "assets/images/banners/banner_restaurants.jpg"
+      ],
+      "published_at": "2026-11-05",
+      "is_available": true,
+      "seller": {
+        "id": "seller_east_grill",
+        "name": "مشويات الشرق",
+        "is_verified": false,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2023"
+      },
+      "comments": [
+        {
+          "id": "comment_grill_1",
+          "author_name": "كريم م.",
+          "body": "الوجبة العائلية وفيرة والطعم ممتاز.",
+          "created_at": "2026-11-06",
+          "rating": 5
+        },
+        {
+          "id": "comment_grill_2",
+          "author_name": "نور هـ.",
+          "body": "التوصيل كان سريع والتغليف جيد.",
+          "created_at": "2026-11-11",
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "id": "offer_cafe_drinks",
+      "business_name": "كافيه لاونج",
+      "title": "خصم 10% على المشروبات",
+      "description": "قهوة مختصة ومشروبات باردة في أجواء هادئة.",
+      "image": "assets/images/businesses/cafe.jpg",
+      "category_id": "restaurants",
+      "discount_percent": 10,
+      "expires_at": "2026-12-10",
+      "views": 143,
+      "is_featured": false,
+      "price": 225,
+      "original_price": 250,
+      "images": [
+        "assets/images/businesses/cafe.jpg",
+        "assets/images/businesses/dessert.jpg"
+      ],
+      "published_at": "2026-11-06",
+      "is_available": true,
+      "seller": {
+        "id": "seller_cafe_lounge",
+        "name": "كافيه لاونج",
+        "is_verified": false,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2024"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_amana_market",
+      "business_name": "سوبرماركت الأمانة",
+      "title": "خصم 15% على المشتريات",
+      "description": "خصم على جميع السلع الأساسية والمنزلية.",
+      "image": "assets/images/businesses/grocery.jpg",
+      "category_id": "commercial",
+      "discount_percent": 15,
+      "expires_at": "2026-11-20",
+      "views": 410,
+      "is_featured": false,
+      "price": 170,
+      "original_price": 200,
+      "images": [
+        "assets/images/businesses/grocery.jpg",
+        "assets/images/businesses/bakery.jpg"
+      ],
+      "published_at": "2026-11-01",
+      "is_available": true,
+      "seller": {
+        "id": "seller_amana_market",
+        "name": "سوبرماركت الأمانة",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2021"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_gym_plus",
+      "business_name": "جيم بلس",
+      "title": "خصم 30% على الاشتراك الشهري",
+      "description": "اشتراك شهري يشمل صالة الأثقال وكارديو.",
+      "image": "assets/images/businesses/gym.jpg",
+      "category_id": "sports",
+      "discount_percent": 30,
+      "expires_at": "2026-12-05",
+      "views": 127,
+      "is_featured": false,
+      "price": 490,
+      "original_price": 700,
+      "images": [
+        "assets/images/businesses/gym.jpg"
+      ],
+      "published_at": "2026-11-03",
+      "is_available": true,
+      "seller": {
+        "id": "seller_gym_plus",
+        "name": "جيم بلس",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2024"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_home_services",
+      "business_name": "فريق دكرنس للصيانة",
+      "title": "خصم 30% على أعمال السباكة",
+      "description": "صيانة منزلية سريعة وموثوقة مع ضمان.",
+      "image": "assets/images/banners/banner_services.jpg",
+      "category_id": "services",
+      "discount_percent": 30,
+      "expires_at": "2026-12-31",
+      "views": 95,
+      "is_featured": false,
+      "price": 350,
+      "original_price": 500,
+      "images": [
+        "assets/images/banners/banner_services.jpg"
+      ],
+      "published_at": "2026-11-02",
+      "is_available": true,
+      "seller": {
+        "id": "seller_home_services",
+        "name": "فريق دكرنس للصيانة",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2023"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_fast_delivery",
+      "business_name": "مركز النقل السريع",
+      "title": "خصم 20% على توصيل الطلبات",
+      "description": "توصيل سريع داخل دكرنس والمناطق المجاورة.",
+      "image": "assets/images/businesses/car.jpg",
+      "category_id": "transport",
+      "discount_percent": 20,
+      "expires_at": "2026-12-18",
+      "views": 88,
+      "is_featured": false,
+      "price": 80,
+      "original_price": 100,
+      "images": [
+        "assets/images/businesses/car.jpg"
+      ],
+      "published_at": "2026-11-07",
+      "is_available": true,
+      "seller": {
+        "id": "seller_fast_delivery",
+        "name": "مركز النقل السريع",
+        "is_verified": false,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2024"
+      },
+      "comments": []
+    },
+    {
+      "id": "offer_techno_store",
+      "business_name": "تكنو ستور",
+      "title": "خصم 25% على الإلكترونيات",
+      "description": "عروض على الأجهزة الصغيرة وملحقات الكمبيوتر.",
+      "image": "assets/images/businesses/electronics.jpg",
+      "category_id": "commercial",
+      "discount_percent": 25,
+      "expires_at": "2026-12-22",
+      "views": 222,
+      "is_featured": true,
+      "price": 900,
+      "original_price": 1200,
+      "images": [
+        "assets/images/businesses/electronics.jpg",
+        "assets/images/businesses/lab.jpg"
+      ],
+      "published_at": "2026-11-04",
+      "is_available": true,
+      "seller": {
+        "id": "seller_techno_store",
+        "name": "تكنو ستور",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2022"
+      },
+      "comments": [
+        {
+          "id": "comment_store_1",
+          "author_name": "يوسف ع.",
+          "body": "أسعار جيدة والمنتجات أصلية.",
+          "created_at": "2026-11-12",
+          "rating": 4
+        }
+      ]
+    },
+    {
+      "id": "offer_harmain_bakery",
+      "business_name": "مخبز الحرمين",
+      "title": "خصم 10% على الحلويات",
+      "description": "حلويات طازجة ومخبوزات يومية.",
+      "image": "assets/images/businesses/bakery.jpg",
+      "category_id": "restaurants",
+      "discount_percent": 10,
+      "expires_at": "2026-11-28",
+      "views": 134,
+      "is_featured": false,
+      "price": 135,
+      "original_price": 150,
+      "images": [
+        "assets/images/businesses/bakery.jpg",
+        "assets/images/businesses/dessert.jpg"
+      ],
+      "published_at": "2026-11-05",
+      "is_available": true,
+      "seller": {
+        "id": "seller_harmain_bakery",
+        "name": "مخبز الحرمين",
+        "is_verified": true,
+        "location": "دكرنس، الدقهلية",
+        "member_since": "2023"
+      },
+      "comments": []
+    }
+  ]
+}
