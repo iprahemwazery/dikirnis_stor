@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dikirnis_stor/core/errors/app_exception.dart';
 import 'package:dikirnis_stor/core/errors/failures.dart';
@@ -72,7 +74,9 @@ void main() {
   setUp(() {
     repository = MockOffersRepository();
     favoritesRepository = MockOfferFavoritesRepository();
-    when(() => repository.getOffersCatalog()).thenAnswer((_) async => _catalog);
+    when(
+      () => repository.getOffersCatalog(force: any(named: 'force')),
+    ).thenAnswer((_) async => _catalog);
     when(
       () => favoritesRepository.getFavoriteOfferIds(),
     ).thenAnswer((_) async => {'offer_web'});
@@ -97,7 +101,9 @@ void main() {
       ),
     ],
     verify: (_) {
-      verify(() => repository.getOffersCatalog()).called(1);
+      verify(
+        () => repository.getOffersCatalog(force: any(named: 'force')),
+      ).called(1);
       verify(() => favoritesRepository.getFavoriteOfferIds()).called(1);
     },
   );
@@ -191,6 +197,38 @@ void main() {
     expect(cubit.state.isFavorite, isFalse);
   });
 
+  test(
+    'ignores an older response that finishes after a newer request',
+    () async {
+      final firstRequest = Completer<OffersCatalog>();
+      var requestCount = 0;
+      when(
+        () => repository.getOffersCatalog(force: any(named: 'force')),
+      ).thenAnswer((_) {
+        requestCount++;
+        if (requestCount == 1) {
+          return firstRequest.future;
+        }
+        return Future.value(_catalog);
+      });
+      final cubit = OfferDetailsCubit(repository, favoritesRepository);
+      addTearDown(cubit.close);
+
+      final firstLoad = cubit.load('offer_web');
+      await Future<void>.delayed(Duration.zero);
+      await cubit.load('offer_ui');
+
+      expect(cubit.state.offer?.id, 'offer_ui');
+
+      firstRequest.complete(_catalog);
+      await firstLoad;
+      await Future<void>.delayed(Duration.zero);
+
+      expect(cubit.state.status, OfferDetailsStatus.success);
+      expect(cubit.state.offer?.id, 'offer_ui');
+    },
+  );
+
   test('retry reloads the last requested offer', () async {
     final cubit = OfferDetailsCubit(repository, favoritesRepository);
     addTearDown(cubit.close);
@@ -198,6 +236,8 @@ void main() {
     await cubit.load('offer_web');
     await cubit.retry();
 
-    verify(() => repository.getOffersCatalog()).called(2);
+    verify(
+      () => repository.getOffersCatalog(force: any(named: 'force')),
+    ).called(2);
   });
 }

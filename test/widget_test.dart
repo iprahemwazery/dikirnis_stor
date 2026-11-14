@@ -17,6 +17,7 @@ import 'package:dikirnis_stor/features/offers/presentation/pages/marketplace_pag
 import 'package:dikirnis_stor/features/offers/presentation/pages/offers_page.dart';
 import 'package:dikirnis_stor/features/profile/data/datasources/profile_data_source.dart';
 import 'package:dikirnis_stor/features/profile/data/datasources/profile_preview_data_source.dart';
+import 'package:dikirnis_stor/features/settings/presentation/pages/settings_page.dart';
 import 'package:dikirnis_stor/router/app_router.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class _TestAssetBundle extends CachingAssetBundle {
   @override
@@ -35,6 +37,7 @@ class _TestAssetBundle extends CachingAssetBundle {
 
 void main() {
   setUp(() async {
+    SharedPreferences.setMockInitialValues({});
     await getIt.reset();
     await configureDependencies();
     await getIt.unregister<HomeDataSource>();
@@ -103,7 +106,6 @@ void main() {
       DikirnisApp(locale: const Locale('en'), router: useFreshRouter()),
     );
     await tester.pumpAndSettle();
-
     expect(find.text('Categories'), findsOneWidget);
     expect(find.text('أحمد محمود'), findsOneWidget);
     expect(find.text('مطاعم وكافيهات'), findsOneWidget);
@@ -497,6 +499,8 @@ void main() {
     );
     expect(find.text('تعليق تجريبي'), findsOneWidget);
 
+    await tester.pump(const Duration(seconds: 5));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(const ValueKey('offer_order_now')));
     await tester.pumpAndSettle();
 
@@ -552,5 +556,116 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('عروض دكنرز 🎁'), findsOneWidget);
+  });
+
+  testWidgets('preserves tab state when switching branches', (tester) async {
+    await pumpOffers(tester);
+
+    await tester.enterText(find.byType(TextField), 'برمجة');
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('الملف الشخصي'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('العروض'));
+    await tester.pumpAndSettle();
+
+    final cubit = BlocProvider.of<OffersCubit>(
+      tester.element(find.byType(OffersPage)),
+    );
+    expect(cubit.state.query, 'برمجة');
+    expect(find.text('خصم 40% على دورات البرمجة'), findsOneWidget);
+    expect(find.text('خصم 25% على العناية بالشعر'), findsNothing);
+  });
+
+  testWidgets('returns to home when back is pressed on another tab', (
+    tester,
+  ) async {
+    await pumpOffers(tester);
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+
+    final navigationBar = tester.widget<HomeBottomNavigationBar>(
+      find.byType(HomeBottomNavigationBar),
+    );
+    expect(navigationBar.selectedIndex, 0);
+  });
+
+  testWidgets('renders the shell at a large text scale without overflow', (
+    tester,
+  ) async {
+    usePhoneSurface(tester);
+    tester.platformDispatcher.textScaleFactorTestValue = 1.6;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+
+    await tester.pumpWidget(
+      DikirnisApp(locale: const Locale('ar'), router: useFreshRouter()),
+    );
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+
+    await tester.tap(find.text('الاستكشافات'));
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+
+    await tester.tap(find.text('العروض'));
+    await tester.pumpAndSettle();
+
+    final navigationBar = tester.widget<HomeBottomNavigationBar>(
+      find.byType(HomeBottomNavigationBar),
+    );
+    expect(navigationBar.selectedIndex, 3);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('renders product details at a large text scale', (tester) async {
+    usePhoneSurface(tester);
+    tester.platformDispatcher.textScaleFactorTestValue = 1.6;
+    addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+
+    await tester.pumpWidget(
+      DikirnisApp(locale: const Locale('ar'), router: useFreshRouter()),
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip('السوق'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('خصم 40% على دورات البرمجة'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('تفاصيل المنتج'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('opens settings and applies language and theme preferences', (
+    tester,
+  ) async {
+    usePhoneSurface(tester);
+    await tester.pumpWidget(DikirnisApp(router: useFreshRouter()));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Profile'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Settings'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(SettingsPage), findsOneWidget);
+    expect(find.text('Appearance'), findsOneWidget);
+    expect(find.text('Language'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('settings_language_arabic')));
+    await tester.pumpAndSettle();
+
+    final settingsContext = tester.element(find.byType(SettingsPage));
+    expect(Directionality.of(settingsContext), TextDirection.rtl);
+
+    await tester.tap(find.byKey(const ValueKey('settings_theme_dark')));
+    await tester.pumpAndSettle();
+
+    final themedContext = tester.element(find.byType(SettingsPage));
+    expect(Theme.of(themedContext).brightness, Brightness.dark);
+
+    final preferences = await SharedPreferences.getInstance();
+    expect(preferences.getString('settings.language'), 'arabic');
+    expect(preferences.getString('settings.theme'), 'dark');
   });
 }

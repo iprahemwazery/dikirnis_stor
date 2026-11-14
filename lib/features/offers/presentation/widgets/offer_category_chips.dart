@@ -20,9 +20,11 @@ class OfferCategoryChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final languageCode = Localizations.localeOf(context).languageCode;
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final height = (42 + (textScale - 1) * 18).clamp(42.0, 68.0);
 
     return SizedBox(
-      height: 42,
+      height: height,
       child: ListView.separated(
         key: const PageStorageKey<String>('offer_categories'),
         scrollDirection: Axis.horizontal,

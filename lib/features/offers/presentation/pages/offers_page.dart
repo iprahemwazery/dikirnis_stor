@@ -8,7 +8,6 @@ import '../../../../l10n/l10n.dart';
 import '../../../../router/app_routes.dart';
 import '../../../../theme/app_colors.dart';
 import '../../../../theme/app_spacing.dart';
-import '../../../home/presentation/widgets/home_bottom_navigation_bar.dart';
 import '../../../home/presentation/widgets/home_search_bar.dart';
 import '../../../home/presentation/widgets/home_section_header.dart';
 import '../../domain/entities/offer.dart';
@@ -117,31 +116,6 @@ class OffersPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: 3,
-        onDestinationSelected: (index) {
-          if (index == 0) {
-            context.go(AppRoutes.home);
-            return;
-          }
-          if (index == 1) {
-            context.go(AppRoutes.explore);
-            return;
-          }
-          if (index == 2) {
-            context.go(AppRoutes.marketplace);
-            return;
-          }
-          if (index == 3) {
-            return;
-          }
-          if (index == 4) {
-            context.go(AppRoutes.profile);
-            return;
-          }
-          _showMessage(context, l10n.comingSoonMessage);
-        },
       ),
     );
   }

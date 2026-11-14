@@ -10,7 +10,6 @@ import '../../../../theme/app_colors.dart';
 import '../../../../theme/app_radii.dart';
 import '../../../../theme/app_spacing.dart';
 import '../../../categories/domain/entities/service_category.dart';
-import '../../../home/presentation/widgets/home_bottom_navigation_bar.dart';
 import '../../../home/presentation/widgets/home_search_bar.dart';
 import '../../../home/presentation/widgets/home_section_header.dart';
 import '../../domain/entities/offer.dart';
@@ -179,31 +178,6 @@ class MarketplacePage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: 2,
-        onDestinationSelected: (index) {
-          if (index == 0) {
-            context.go(AppRoutes.home);
-            return;
-          }
-          if (index == 1) {
-            context.go(AppRoutes.explore);
-            return;
-          }
-          if (index == 2) {
-            return;
-          }
-          if (index == 3) {
-            context.go(AppRoutes.offers);
-            return;
-          }
-          if (index == 4) {
-            context.go(AppRoutes.profile);
-            return;
-          }
-          _showMessage(context, l10n.comingSoonMessage);
-        },
       ),
     );
   }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dikirnis_stor/core/errors/app_exception.dart';
 import 'package:dikirnis_stor/features/categories/data/models/category_model.dart';
 import 'package:dikirnis_stor/features/offers/data/datasources/offers_data_source.dart';
@@ -120,5 +122,49 @@ void main() {
       repository.getOffersCatalog(),
       throwsA(isA<UnknownException>()),
     );
+  });
+
+  test('caches the catalog within the TTL and refreshes when forced', () async {
+    var fetchCount = 0;
+    when(() => dataSource.fetchOffersCatalog()).thenAnswer((_) async {
+      fetchCount++;
+      return _model;
+    });
+
+    await repository.getOffersCatalog();
+    await repository.getOffersCatalog();
+    expect(fetchCount, 1);
+
+    await repository.getOffersCatalog(force: true);
+    expect(fetchCount, 2);
+  });
+
+  test('deduplicates concurrent catalog requests', () async {
+    final completer = Completer<OffersContentModel>();
+    when(
+      () => dataSource.fetchOffersCatalog(),
+    ).thenAnswer((_) => completer.future);
+
+    final first = repository.getOffersCatalog();
+    final second = repository.getOffersCatalog();
+
+    expect(identical(first, second), isTrue);
+    completer.complete(_model);
+    await Future.wait([first, second]);
+    verify(() => dataSource.fetchOffersCatalog()).called(1);
+  });
+
+  test('returns the last cached catalog when a refresh is offline', () async {
+    when(() => dataSource.fetchOffersCatalog()).thenAnswer((_) async => _model);
+    final cached = await repository.getOffersCatalog();
+
+    when(
+      () => dataSource.fetchOffersCatalog(),
+    ).thenThrow(const NetworkException());
+
+    final fallback = await repository.getOffersCatalog(force: true);
+
+    expect(fallback, same(cached));
+    verify(() => dataSource.fetchOffersCatalog()).called(2);
   });
 }

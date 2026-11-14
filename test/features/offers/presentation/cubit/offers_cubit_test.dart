@@ -93,7 +93,9 @@ void main() {
   setUp(() {
     repository = MockOffersRepository();
     favoritesRepository = MockOfferFavoritesRepository();
-    when(() => repository.getOffersCatalog()).thenAnswer((_) async => _catalog);
+    when(
+      () => repository.getOffersCatalog(force: any(named: 'force')),
+    ).thenAnswer((_) async => _catalog);
     when(
       () => favoritesRepository.getFavoriteOfferIds(),
     ).thenAnswer((_) async => <String>{});
@@ -122,13 +124,17 @@ void main() {
       ),
     ],
     verify: (_) {
-      verify(() => repository.getOffersCatalog()).called(1);
+      verify(
+        () => repository.getOffersCatalog(force: any(named: 'force')),
+      ).called(1);
       verify(() => favoritesRepository.getFavoriteOfferIds()).called(1);
     },
   );
 
   test('maps loading errors to an application failure', () async {
-    when(() => repository.getOffersCatalog()).thenThrow(NetworkException());
+    when(
+      () => repository.getOffersCatalog(force: any(named: 'force')),
+    ).thenThrow(NetworkException());
 
     final cubit = OffersCubit(repository, favoritesRepository);
     final states = <OffersState>[];
@@ -308,7 +314,9 @@ void main() {
       ),
     ],
     verify: (_) {
-      verify(() => repository.getOffersCatalog()).called(2);
+      verify(
+        () => repository.getOffersCatalog(force: any(named: 'force')),
+      ).called(2);
     },
   );
 }

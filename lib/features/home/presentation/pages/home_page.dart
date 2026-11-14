@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../l10n/l10n.dart';
-import '../../../../router/app_routes.dart';
 import '../../../../theme/app_spacing.dart';
 import '../../domain/entities/business.dart';
 import '../../domain/entities/home_advertisement.dart';
@@ -18,7 +15,6 @@ import '../widgets/business_horizontal_list.dart';
 import '../widgets/category_grid.dart';
 import '../widgets/featured_advertisement_card.dart';
 import '../widgets/home_banner_carousel.dart';
-import '../widgets/home_bottom_navigation_bar.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_loading_view.dart';
 import '../widgets/home_section_header.dart';
@@ -76,31 +72,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: 0,
-        onDestinationSelected: (index) {
-          if (index == 0) {
-            return;
-          }
-          if (index == 1) {
-            context.go(AppRoutes.explore);
-            return;
-          }
-          if (index == 2) {
-            context.go(AppRoutes.marketplace);
-            return;
-          }
-          if (index == 3) {
-            context.go(AppRoutes.offers);
-            return;
-          }
-          if (index == 4) {
-            context.go(AppRoutes.profile);
-            return;
-          }
-          _showMessage(context, l10n.comingSoonMessage);
-        },
-      ),
     );
   }
 }
@@ -115,6 +86,8 @@ class _HomeContentView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final cubit = context.read<HomeCubit>();
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final listHeightDelta = (textScale - 1).clamp(0.0, 2.0);
 
     void showComingSoon() {
       _showMessage(context, l10n.comingSoonMessage);
@@ -181,7 +154,7 @@ class _HomeContentView extends StatelessWidget {
             SliverToBoxAdapter(
               child: BusinessHorizontalList(
                 businesses: content.mostViewed,
-                height: 200,
+                height: 200 + listHeightDelta * 70,
                 cardWidth: 198,
                 imageHeight: 110,
                 showViews: true,
@@ -212,7 +185,7 @@ class _HomeContentView extends StatelessWidget {
             SliverToBoxAdapter(
               child: BusinessHorizontalList(
                 businesses: content.recentlyAdded,
-                height: 212,
+                height: 212 + listHeightDelta * 70,
                 cardWidth: 208,
                 imageHeight: 116,
                 onBusinessTap: handleBusiness,
@@ -230,7 +203,7 @@ class _HomeContentView extends StatelessWidget {
             SliverToBoxAdapter(
               child: BusinessHorizontalList(
                 businesses: content.medical,
-                height: 242,
+                height: 242 + listHeightDelta * 90,
                 cardWidth: 260,
                 imageHeight: 118,
                 showDescription: true,
@@ -249,7 +222,7 @@ class _HomeContentView extends StatelessWidget {
             SliverToBoxAdapter(
               child: BusinessHorizontalList(
                 businesses: content.restaurants,
-                height: 238,
+                height: 238 + listHeightDelta * 90,
                 cardWidth: 244,
                 imageHeight: 112,
                 showDescription: true,

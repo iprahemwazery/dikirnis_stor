@@ -21,12 +21,14 @@ class HomeBottomNavigationBar extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
     final l10n = context.l10n;
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final height = (70 + (textScale - 1) * 24).clamp(70.0, 108.0);
 
     return SafeArea(
       top: false,
       minimum: const EdgeInsets.fromLTRB(16, 0, 16, 10),
       child: Container(
-        height: 70,
+        height: height,
         decoration: BoxDecoration(
           color: colorScheme.surface,
           borderRadius: BorderRadius.circular(AppRadii.xl),
@@ -129,7 +131,7 @@ class _NavItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppRadii.lg),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -155,9 +157,9 @@ class _NavItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.labelSmall?.copyWith(
                     color: color,
-                    fontSize: 9.5,
+                    fontSize: 10.5,
                     fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
-                    height: 1.1,
+                    height: 1.15,
                   ),
                 ),
               ],

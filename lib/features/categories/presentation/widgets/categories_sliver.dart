@@ -55,6 +55,13 @@ class CategoriesSliver extends StatelessWidget {
                       final crossAxisCount = constraints.crossAxisExtent >= 720
                           ? 3
                           : 2;
+                      final textScale = MediaQuery.textScalerOf(
+                        context,
+                      ).scale(1);
+                      final itemExtent = (112 + (textScale - 1) * 30).clamp(
+                        112.0,
+                        180.0,
+                      );
 
                       return SliverPadding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -69,7 +76,7 @@ class CategoriesSliver extends StatelessWidget {
                                 crossAxisCount: crossAxisCount,
                                 mainAxisSpacing: AppSpacing.sm,
                                 crossAxisSpacing: AppSpacing.sm,
-                                mainAxisExtent: 112,
+                                mainAxisExtent: itemExtent,
                               ),
                           itemCount: state.categories.length,
                           itemBuilder: (context, index) {

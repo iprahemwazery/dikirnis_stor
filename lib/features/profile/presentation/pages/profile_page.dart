@@ -9,7 +9,6 @@ import '../../../../router/app_routes.dart';
 import '../../../../theme/app_colors.dart';
 import '../../../../theme/app_radii.dart';
 import '../../../../theme/app_spacing.dart';
-import '../../../home/presentation/widgets/home_bottom_navigation_bar.dart';
 import '../../../home/presentation/widgets/home_section_header.dart';
 import '../../domain/entities/user_profile.dart';
 import '../cubit/profile_cubit.dart';
@@ -47,31 +46,6 @@ class ProfilePage extends StatelessWidget {
             };
           },
         ),
-      ),
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: 4,
-        onDestinationSelected: (index) {
-          if (index == 0) {
-            context.go(AppRoutes.home);
-            return;
-          }
-          if (index == 1) {
-            context.go(AppRoutes.explore);
-            return;
-          }
-          if (index == 2) {
-            context.go(AppRoutes.marketplace);
-            return;
-          }
-          if (index == 3) {
-            context.go(AppRoutes.offers);
-            return;
-          }
-          if (index == 4) {
-            return;
-          }
-          _showMessage(context, l10n.comingSoonMessage);
-        },
       ),
     );
   }
@@ -176,7 +150,7 @@ class _ProfileContentView extends StatelessWidget {
                 ProfileMenuItem(
                   icon: Icons.settings_outlined,
                   title: l10n.profileSettings,
-                  onTap: showComingSoon,
+                  onTap: () => context.push(AppRoutes.settings),
                 ),
               ],
             ),

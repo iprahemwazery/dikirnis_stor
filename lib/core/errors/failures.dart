@@ -5,8 +5,13 @@ import 'app_exception.dart';
 enum FailureType {
   network,
   timeout,
-  server,
+  validation,
+  unauthorized,
+  forbidden,
   notFound,
+  conflict,
+  rateLimited,
+  server,
   cancelled,
   parsing,
   unknown,
@@ -14,7 +19,7 @@ enum FailureType {
 
 @immutable
 class AppFailure {
-  const AppFailure(this.type, {this.message});
+  const AppFailure(this.type, {this.message, this.statusCode, this.retryAfter});
 
   factory AppFailure.fromException(Object error) {
     return switch (error) {
@@ -26,13 +31,46 @@ class AppFailure {
         FailureType.timeout,
         message: message,
       ),
-      ServerException(:final message) => AppFailure(
-        FailureType.server,
+      ValidationException(:final message, :final statusCode) => AppFailure(
+        FailureType.validation,
         message: message,
+        statusCode: statusCode,
       ),
-      NotFoundException(:final message) => AppFailure(
+      UnauthorizedException(:final message, :final statusCode) => AppFailure(
+        FailureType.unauthorized,
+        message: message,
+        statusCode: statusCode,
+      ),
+      ForbiddenException(:final message, :final statusCode) => AppFailure(
+        FailureType.forbidden,
+        message: message,
+        statusCode: statusCode,
+      ),
+      NotFoundException(:final message, :final statusCode) => AppFailure(
         FailureType.notFound,
         message: message,
+        statusCode: statusCode,
+      ),
+      ConflictException(:final message, :final statusCode) => AppFailure(
+        FailureType.conflict,
+        message: message,
+        statusCode: statusCode,
+      ),
+      RateLimitException(
+        :final message,
+        :final statusCode,
+        :final retryAfter,
+      ) =>
+        AppFailure(
+          FailureType.rateLimited,
+          message: message,
+          statusCode: statusCode,
+          retryAfter: retryAfter,
+        ),
+      ServerException(:final message, :final statusCode) => AppFailure(
+        FailureType.server,
+        message: message,
+        statusCode: statusCode,
       ),
       RequestCancelledException(:final message) => AppFailure(
         FailureType.cancelled,
@@ -52,4 +90,18 @@ class AppFailure {
 
   final FailureType type;
   final String? message;
+  final int? statusCode;
+  final Duration? retryAfter;
+
+  bool get isRetryable {
+    return switch (type) {
+      FailureType.network ||
+      FailureType.timeout ||
+      FailureType.rateLimited ||
+      FailureType.server => true,
+      _ => false,
+    };
+  }
+
+  bool get isCancellation => type == FailureType.cancelled;
 }

@@ -225,6 +225,40 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileSettings => 'Settings';
 
   @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsAppearanceSection => 'Appearance';
+
+  @override
+  String get settingsLanguageSection => 'Language';
+
+  @override
+  String get settingsThemeSystem => 'Follow system';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsLanguageSystem => 'Follow system';
+
+  @override
+  String get settingsLanguageArabic => 'Arabic';
+
+  @override
+  String get settingsLanguageEnglish => 'English';
+
+  @override
+  String get settingsSaveError =>
+      'We could not save your settings. Please try again.';
+
+  @override
+  String get settingsOfflineNote => 'Settings are stored on this device.';
+
+  @override
   String get profileActivitySection => 'My activity';
 
   @override

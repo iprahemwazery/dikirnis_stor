@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/errors/app_exception.dart';
 import '../../../../core/errors/failures.dart';
 import '../../domain/repositories/home_repository.dart';
 import 'home_state.dart';
@@ -34,6 +35,8 @@ class HomeCubit extends Cubit<HomeState> {
           failure: null,
         ),
       );
+    } on RequestCancelledException {
+      return;
     } catch (error) {
       if (isClosed) {
         return;

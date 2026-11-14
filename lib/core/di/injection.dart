@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/categories/data/datasources/categories_data_source.dart';
 import '../../features/categories/data/datasources/mock_categories_data_source.dart';
@@ -14,7 +15,7 @@ import '../../features/home/domain/repositories/home_repository.dart';
 import '../../features/home/presentation/cubit/home_cubit.dart';
 import '../../features/offers/data/datasources/offers_data_source.dart';
 import '../../features/offers/data/datasources/offers_preview_data_source.dart';
-import '../../features/offers/data/repositories/in_memory_offer_favorites_repository.dart';
+import '../../features/offers/data/repositories/shared_preferences_offer_favorites_repository.dart';
 import '../../features/offers/data/repositories/offers_repository_impl.dart';
 import '../../features/offers/domain/repositories/offer_favorites_repository.dart';
 import '../../features/offers/domain/repositories/offers_repository.dart';
@@ -25,6 +26,9 @@ import '../../features/profile/data/datasources/profile_preview_data_source.dart
 import '../../features/profile/data/repositories/profile_repository_impl.dart';
 import '../../features/profile/domain/repositories/profile_repository.dart';
 import '../../features/profile/presentation/cubit/profile_cubit.dart';
+import '../../features/settings/data/repositories/shared_preferences_settings_repository.dart';
+import '../../features/settings/domain/repositories/settings_repository.dart';
+import '../../features/settings/presentation/cubit/settings_cubit.dart';
 import '../config/app_config.dart';
 import '../network/api_client.dart';
 
@@ -35,7 +39,10 @@ Future<void> configureDependencies() async {
     return;
   }
 
+  final preferences = await SharedPreferences.getInstance();
+
   getIt
+    ..registerSingleton<SharedPreferences>(preferences)
     ..registerLazySingleton<Dio>(_createDio)
     ..registerLazySingleton<ApiClient>(() => ApiClient(getIt<Dio>()))
     ..registerLazySingleton<CategoriesDataSource>(MockCategoriesDataSource.new)
@@ -62,7 +69,8 @@ Future<void> configureDependencies() async {
       () => OffersRepositoryImpl(getIt<OffersDataSource>()),
     )
     ..registerLazySingleton<OfferFavoritesRepository>(
-      InMemoryOfferFavoritesRepository.new,
+      () =>
+          SharedPreferencesOfferFavoritesRepository(getIt<SharedPreferences>()),
     )
     ..registerFactory<OffersCubit>(
       () => OffersCubit(
@@ -75,6 +83,12 @@ Future<void> configureDependencies() async {
         getIt<OffersRepository>(),
         getIt<OfferFavoritesRepository>(),
       ),
+    )
+    ..registerLazySingleton<SettingsRepository>(
+      () => SharedPreferencesSettingsRepository(getIt<SharedPreferences>()),
+    )
+    ..registerLazySingleton<SettingsCubit>(
+      () => SettingsCubit(getIt<SettingsRepository>()),
     );
 }
 

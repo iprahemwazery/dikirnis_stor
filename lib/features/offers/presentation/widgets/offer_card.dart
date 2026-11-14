@@ -28,6 +28,9 @@ class OfferCard extends StatelessWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isDark = theme.brightness == Brightness.dark;
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final cardHeight = (118 + (textScale - 1) * 95).clamp(118.0, 230.0);
+    final imageWidth = (118 + (textScale - 1) * 35).clamp(118.0, 170.0);
 
     return Container(
       key: ValueKey('offer_${offer.id}'),
@@ -49,7 +52,7 @@ class OfferCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.sm),
             child: SizedBox(
-              height: 118,
+              height: cardHeight,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -57,6 +60,7 @@ class OfferCard extends StatelessWidget {
                   const SizedBox(width: AppSpacing.sm),
                   _OfferImage(
                     offer: offer,
+                    width: imageWidth,
                     isFavorite: isFavorite,
                     onFavoriteTap: onFavoriteTap,
                   ),
@@ -220,11 +224,13 @@ class _MetadataItem extends StatelessWidget {
 class _OfferImage extends StatelessWidget {
   const _OfferImage({
     required this.offer,
+    required this.width,
     required this.isFavorite,
     required this.onFavoriteTap,
   });
 
   final Offer offer;
+  final double width;
   final bool isFavorite;
   final VoidCallback onFavoriteTap;
 
@@ -233,7 +239,7 @@ class _OfferImage extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return SizedBox(
-      width: 118,
+      width: width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppRadii.md),
         child: Stack(
@@ -247,12 +253,10 @@ class _OfferImage extends StatelessWidget {
               placeholder: Container(
                 color: AppColors.tealSoft,
                 alignment: Alignment.center,
-                child: SizedBox.square(
-                  dimension: 20,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: colorScheme.primary,
-                  ),
+                child: Icon(
+                  Icons.local_offer_outlined,
+                  color: colorScheme.primary,
+                  size: 24,
                 ),
               ),
             ),

@@ -64,10 +64,28 @@ class ApiClient {
   }
 
   AppException _mapBadResponse(DioException error) {
-    final statusCode = error.response?.statusCode;
-    if (statusCode == 404) {
-      return NotFoundException(cause: error);
+    final response = error.response;
+    final statusCode = response?.statusCode;
+    return switch (statusCode) {
+      400 || 422 => ValidationException(statusCode: statusCode!, cause: error),
+      401 => UnauthorizedException(cause: error),
+      403 => ForbiddenException(cause: error),
+      404 => NotFoundException(cause: error),
+      408 => RequestTimeoutException(cause: error),
+      409 => ConflictException(cause: error),
+      429 => RateLimitException(
+        retryAfter: _parseRetryAfter(response?.headers.value('retry-after')),
+        cause: error,
+      ),
+      _ => ServerException(statusCode: statusCode, cause: error),
+    };
+  }
+
+  Duration? _parseRetryAfter(String? value) {
+    final seconds = int.tryParse(value?.trim() ?? '');
+    if (seconds == null || seconds < 0) {
+      return null;
     }
-    return ServerException(statusCode: statusCode, cause: error);
+    return Duration(seconds: seconds);
   }
 }

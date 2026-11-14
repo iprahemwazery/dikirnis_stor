@@ -218,6 +218,39 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profileSettings => 'الإعدادات';
 
   @override
+  String get settingsTitle => 'الإعدادات';
+
+  @override
+  String get settingsAppearanceSection => 'المظهر';
+
+  @override
+  String get settingsLanguageSection => 'اللغة';
+
+  @override
+  String get settingsThemeSystem => 'حسب إعدادات النظام';
+
+  @override
+  String get settingsThemeLight => 'فاتح';
+
+  @override
+  String get settingsThemeDark => 'داكن';
+
+  @override
+  String get settingsLanguageSystem => 'حسب إعدادات النظام';
+
+  @override
+  String get settingsLanguageArabic => 'العربية';
+
+  @override
+  String get settingsLanguageEnglish => 'الإنجليزية';
+
+  @override
+  String get settingsSaveError => 'تعذر حفظ الإعدادات. حاول مرة أخرى.';
+
+  @override
+  String get settingsOfflineNote => 'تُحفظ الإعدادات على هذا الجهاز.';
+
+  @override
   String get profileActivitySection => 'نشاطي';
 
   @override

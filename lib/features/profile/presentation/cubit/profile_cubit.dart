@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/errors/app_exception.dart';
 import '../../../../core/errors/failures.dart';
 import '../../domain/repositories/profile_repository.dart';
 import 'profile_state.dart';
@@ -32,6 +33,8 @@ class ProfileCubit extends Cubit<ProfileState> {
           failure: null,
         ),
       );
+    } on RequestCancelledException {
+      return;
     } catch (error) {
       if (isClosed) {
         return;

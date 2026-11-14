@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/errors/app_exception.dart';
 import '../../../../core/errors/failures.dart';
 import '../../../categories/domain/entities/service_category.dart';
 import '../../domain/entities/offer.dart';
@@ -48,7 +49,7 @@ class OffersCubit extends Cubit<OffersState> {
     emit(state.copyWith(status: OffersStatus.loading, failure: null));
 
     try {
-      final catalog = await _repository.getOffersCatalog();
+      final catalog = await _repository.getOffersCatalog(force: force);
       final favoriteIds = await _favoritesRepository.getFavoriteOfferIds();
       if (isClosed) {
         return;
@@ -77,6 +78,8 @@ class OffersCubit extends Cubit<OffersState> {
           failure: null,
         ),
       );
+    } on RequestCancelledException {
+      return;
     } catch (error) {
       if (isClosed) {
         return;
@@ -190,6 +193,8 @@ class OffersCubit extends Cubit<OffersState> {
         isFavorite: !wasFavorite,
       );
       return true;
+    } on RequestCancelledException {
+      return false;
     } catch (error) {
       if (isClosed) {
         return false;

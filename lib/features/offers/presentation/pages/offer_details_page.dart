@@ -165,12 +165,10 @@ class _OfferDetailsContent extends StatelessWidget {
                     placeholder: Container(
                       color: AppColors.tealSoft,
                       alignment: Alignment.center,
-                      child: SizedBox.square(
-                        dimension: 26,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2.5,
-                          color: colorScheme.primary,
-                        ),
+                      child: Icon(
+                        Icons.local_offer_outlined,
+                        color: colorScheme.primary,
+                        size: 34,
                       ),
                     ),
                   ),

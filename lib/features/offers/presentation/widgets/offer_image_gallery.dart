@@ -82,12 +82,10 @@ class _OfferImageGalleryState extends State<OfferImageGallery> {
                     placeholder: Container(
                       color: AppColors.tealSoft,
                       alignment: Alignment.center,
-                      child: SizedBox.square(
-                        dimension: 26,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2.5,
-                          color: colorScheme.primary,
-                        ),
+                      child: Icon(
+                        Icons.shopping_bag_outlined,
+                        color: colorScheme.primary,
+                        size: 34,
                       ),
                     ),
                   );

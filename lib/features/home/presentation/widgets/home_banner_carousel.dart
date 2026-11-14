@@ -32,6 +32,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel> {
   late final PageController _pageController;
   Timer? _autoScrollTimer;
   bool _isUserInteracting = false;
+  bool _isTickerEnabled = true;
   int _currentPage = 0;
 
   int get _initialPage => widget.banners.isEmpty
@@ -44,6 +45,21 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel> {
     _currentPage = _initialPage;
     _pageController = PageController(initialPage: _currentPage);
     _startAutoScroll();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final isTickerEnabled = TickerMode.valuesOf(context).enabled;
+    if (isTickerEnabled == _isTickerEnabled) {
+      return;
+    }
+    _isTickerEnabled = isTickerEnabled;
+    if (isTickerEnabled) {
+      _startAutoScroll();
+    } else {
+      _autoScrollTimer?.cancel();
+    }
   }
 
   @override
@@ -68,7 +84,7 @@ class _HomeBannerCarouselState extends State<HomeBannerCarousel> {
       return;
     }
     _autoScrollTimer = Timer.periodic(_autoScrollInterval, (_) {
-      if (!mounted || !_pageController.hasClients) {
+      if (!mounted || !_isTickerEnabled || !_pageController.hasClients) {
         return;
       }
       _pageController.animateToPage(

@@ -16,6 +16,9 @@ class CategoryGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final itemExtent = (100 + (textScale - 1) * 26).clamp(100.0, 160.0);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: LayoutBuilder(
@@ -34,7 +37,7 @@ class CategoryGrid extends StatelessWidget {
               crossAxisCount: crossAxisCount,
               mainAxisSpacing: AppSpacing.sm,
               crossAxisSpacing: AppSpacing.sm,
-              mainAxisExtent: 100,
+              mainAxisExtent: itemExtent,
             ),
             itemCount: categories.length,
             itemBuilder: (context, index) {

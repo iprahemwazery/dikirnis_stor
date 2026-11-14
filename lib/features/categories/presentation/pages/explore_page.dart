@@ -4,10 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../l10n/l10n.dart';
-import '../../../../router/app_routes.dart';
 import '../../../../theme/app_colors.dart';
 import '../../../../theme/app_spacing.dart';
-import '../../../home/presentation/widgets/home_bottom_navigation_bar.dart';
 import '../../../home/presentation/widgets/home_section_header.dart';
 import '../cubit/categories_cubit.dart';
 import '../cubit/categories_state.dart';
@@ -101,7 +99,12 @@ class ExplorePage extends StatelessWidget {
                               AppSpacing.lg * 2 -
                               spacing) /
                           2;
-                      final cardHeight = cellWidth.clamp(150.0, 175.0);
+                      final textScale = MediaQuery.textScalerOf(
+                        context,
+                      ).scale(1);
+                      final cardHeight =
+                          (cellWidth.clamp(150.0, 175.0) + (textScale - 1) * 36)
+                              .clamp(150.0, 230.0);
 
                       return SliverPadding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -156,7 +159,7 @@ class ExplorePage extends StatelessWidget {
             : SystemUiOverlayStyle.dark,
         leading: IconButton(
           tooltip: l10n.backToHome,
-          onPressed: () => context.go(AppRoutes.home),
+          onPressed: () => StatefulNavigationShell.of(context).goBranch(0),
           icon: Icon(
             isRtl ? Icons.arrow_forward_rounded : Icons.arrow_back_rounded,
           ),
@@ -168,31 +171,6 @@ class ExplorePage extends StatelessWidget {
             fontWeight: FontWeight.w800,
           ),
         ),
-      ),
-      bottomNavigationBar: HomeBottomNavigationBar(
-        selectedIndex: 1,
-        onDestinationSelected: (index) {
-          if (index == 0) {
-            context.go(AppRoutes.home);
-            return;
-          }
-          if (index == 1) {
-            return;
-          }
-          if (index == 2) {
-            context.go(AppRoutes.marketplace);
-            return;
-          }
-          if (index == 3) {
-            context.go(AppRoutes.offers);
-            return;
-          }
-          if (index == 4) {
-            context.go(AppRoutes.profile);
-            return;
-          }
-          _showComingSoon(context);
-        },
       ),
     );
   }

@@ -24,6 +24,9 @@ class OfferSimilarProducts extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
+    final textScale = MediaQuery.textScalerOf(context).scale(1);
+    final listHeight = (220 + (textScale - 1) * 90).clamp(220.0, 330.0);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,7 +38,7 @@ class OfferSimilarProducts extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          height: 220,
+          height: listHeight,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             clipBehavior: Clip.none,

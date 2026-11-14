@@ -24,6 +24,8 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
   late final StreamSubscription<Set<String>> _favoriteSubscription;
 
   String? _offerId;
+  String? _loadingOfferId;
+  int _requestGeneration = 0;
 
   void _handleFavoriteIdsChanged(Set<String> favoriteIds) {
     if (isClosed) {
@@ -53,19 +55,23 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
 
   Future<void> load(String offerId, {bool force = false}) async {
     _offerId = offerId;
-    if (state.status == OfferDetailsStatus.loading) {
-      return;
-    }
     if (!force &&
         state.status == OfferDetailsStatus.success &&
         state.offer?.id == offerId) {
       return;
     }
+    if (!force &&
+        state.status == OfferDetailsStatus.loading &&
+        _loadingOfferId == offerId) {
+      return;
+    }
 
+    final requestGeneration = ++_requestGeneration;
+    _loadingOfferId = offerId;
     emit(state.copyWith(status: OfferDetailsStatus.loading, failure: null));
 
     try {
-      final catalog = await _repository.getOffersCatalog();
+      final catalog = await _repository.getOffersCatalog(force: force);
       Offer? selectedOffer;
       for (final offer in catalog.offers) {
         if (offer.id == offerId) {
@@ -79,7 +85,7 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
         );
       }
       final favoriteIds = await _favoritesRepository.getFavoriteOfferIds();
-      if (isClosed) {
+      if (isClosed || requestGeneration != _requestGeneration) {
         return;
       }
 
@@ -99,6 +105,7 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
           .take(6)
           .toList(growable: false);
 
+      _loadingOfferId = null;
       emit(
         state.copyWith(
           status: OfferDetailsStatus.success,
@@ -110,10 +117,16 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
           failure: null,
         ),
       );
+    } on RequestCancelledException {
+      if (requestGeneration == _requestGeneration) {
+        _loadingOfferId = null;
+      }
+      return;
     } catch (error) {
-      if (isClosed) {
+      if (isClosed || requestGeneration != _requestGeneration) {
         return;
       }
+      _loadingOfferId = null;
       emit(
         state.copyWith(
           status: OfferDetailsStatus.failure,
@@ -159,6 +172,8 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
         isFavorite: !wasFavorite,
       );
       return true;
+    } on RequestCancelledException {
+      return false;
     } catch (error) {
       if (isClosed) {
         return false;
@@ -204,6 +219,8 @@ class OfferDetailsCubit extends Cubit<OfferDetailsState> {
         isFavorite: !wasFavorite,
       );
       return true;
+    } on RequestCancelledException {
+      return false;
     } catch (error) {
       if (isClosed) {
         return false;

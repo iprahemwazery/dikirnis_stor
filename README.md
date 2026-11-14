@@ -17,9 +17,12 @@ layout.
   guidance preview, comments preview, similar products, and unavailable-state
   actions.
 - Profile screen backed by preview data.
-- Light and dark themes following the system setting.
+- Persistent settings for Arabic/English language and system/light/dark theme.
+- Persistent favorites that survive app restarts.
 - Arabic and English localization generated from ARB files.
 - Loading, empty, error, retry, refresh, and unavailable states.
+- Guarded shell navigation with per-tab state preservation and back-to-home
+  behavior.
 
 All content currently comes from bundled preview JSON and local image assets.
 No production backend or credentials are included.
@@ -89,8 +92,9 @@ lib/
   features/
     categories/                     Category data, domain, and Explore screen
     home/                           Home content, business cards, and banners
-    offers/                         Offers, Marketplace, and product details
+    offers/                         Offers, Marketplace, product details, favorites
     profile/                        Profile data and screen
+    settings/                       Language/theme settings and persistence
 test/                               Unit, Cubit, repository, model, and widget tests
 ```
 
@@ -109,6 +113,9 @@ Layer responsibilities:
 - Cubits check `isClosed` after asynchronous work before emitting.
 - Duplicate loads are ignored while a request is in flight; reloading requires
   an explicit `force` or `refresh`.
+- Catalog requests are cached briefly, deduplicated, and can fall back to stale
+  data when an offline refresh fails.
+- Outdated detail responses are ignored when a newer offer request completes.
 - Errors are mapped to `AppFailure`, while user-facing messages remain
   localized in the presentation layer.
 - Cubits are created with `BlocProvider` and disposed by the widget tree.
@@ -136,9 +143,8 @@ contract exists yet:
 - Adding comments.
 - Calling or messaging sellers.
 - Publishing products.
-- Persisting favorites across app restarts.
 
-Favorites are stored in memory for the current app session only.
+Favorites and display settings are persisted locally with SharedPreferences.
 
 ## Environment configuration
 
@@ -185,7 +191,7 @@ flutter build apk --debug
 Verified on the current codebase:
 
 - `flutter analyze`: no issues.
-- `flutter test`: 84 tests passed.
+- `flutter test`: 105 tests passed.
 - `flutter build apk --debug`: successful.
 - Debug APK installed and launched on an Android device.
 
@@ -193,11 +199,13 @@ Verified on the current codebase:
 
 - Backend, authentication, database, and API contracts are not defined.
 - All datasources are preview implementations.
-- Favorites are in-memory only.
 - Orders, comments, seller contact, and product publishing are unavailable
   until their services are connected.
-- Pagination, remote image caching, offline behavior, and local persistence are
-  not implemented.
+- Catalog caching is in-memory only; there is no durable offline catalog or
+  remote-image cache.
+- Pagination and server-side search/sorting are not implemented.
+- Automated coverage is unit, Cubit, repository, and widget tests; there is no
+  device integration-test suite.
 - There is no CI pipeline or release signing configuration.
 - Release builds and store submission still require production configuration.
 
