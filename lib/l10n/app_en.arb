@@ -185,6 +185,215 @@
   "offerOrderUnavailableTitle": "Ordering unavailable",
   "offerOrderUnavailableMessage": "The ordering service is not connected yet, and no order was submitted.",
   "currencyEgp": "EGP",
+  "businessesTitle": "Businesses",
+  "pressBackAgainToExit": "Press back again to exit the app",
+  "businessesAllLabel": "All",
+  "businessesSearchHint": "Search for a business or place...",
+  "businessesNoSearchResults": "No businesses match your search.",
+  "businessesCountLabel": "businesses",
+  "businessesAddCta": "Add business",
+  "businessesAddTitle": "Add a new business",
+  "businessesFormName": "Business name",
+  "businessesFormLocation": "Address",
+  "businessesFormDescription": "Short description",
+  "businessesFormPhone": "Contact number (optional)",
+  "businessesFormCategory": "Category",
+  "businessesFormRequired": "This field is required.",
+  "businessesFormIntro": "Enter the business details. They will not be saved until the publishing service is connected.",
+  "businessesFormSubmit": "Submit business",
+  "businessesCreateUnavailableTitle": "Publishing is not available yet",
+  "businessesCreateUnavailableMessage": "Your details were validated, but saving businesses will be available after the backend is connected.",
+  "businessesFormDiscardTitle": "Discard changes?",
+  "businessesFormDiscardMessage": "The business details you entered will be lost.",
+  "businessesFormDiscardConfirm": "Exit",
+  "businessesFormContinue": "Keep editing",
+  "businessDetailsTitle": "Business details",
+  "businessAboutTitle": "About",
+  "businessLocationTitle": "Location",
+  "businessContactTitle": "Contact",
+  "businessRatingLabel": "Rating",
+  "businessesEmpty": "There are no businesses in this section yet.",
+  "businessesErrorMessage": "Could not load businesses. Please try again.",
+  "businessesNotFound": "This business could not be found.",
+  "businessContactUnavailable": "No contact details are available for this business.",
+  "businessMapUnavailable": "The location is shown as text; the map will be available once the maps service is connected.",
+  "jobsTitle": "Jobs",
+  "jobsVacanciesTab": "Jobs",
+  "jobsCandidatesTab": "Available for work",
+  "jobsSearchVacanciesHint": "Search jobs or companies...",
+  "jobsSearchCandidatesHint": "Search by name or skill...",
+  "jobsAllCategories": "All",
+  "jobsFilters": "Filters",
+  "jobsClearFilters": "Clear filters",
+  "jobsResultsCount": "{count, plural, =0{No results} =1{1 result} other{{count} results}}",
+  "@jobsResultsCount": {
+    "description": "Number of job or candidate results.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "jobsVacanciesEmpty": "No jobs are available right now.",
+  "jobsCandidatesEmpty": "No candidates are available right now.",
+  "jobsNoSearchResults": "No results match your search or filters.",
+  "jobsErrorMessage": "We could not load jobs. Please try again.",
+  "jobsFilterCategory": "Category",
+  "jobsFilterEmploymentType": "Employment type",
+  "jobsFilterAvailability": "Availability",
+  "jobsFilterSort": "Sort",
+  "jobsSortNewest": "Newest",
+  "jobsSortSalaryHigh": "Highest salary",
+  "jobsSortSalaryLow": "Lowest salary",
+  "jobsSortExperienceHigh": "Most experienced",
+  "jobsEmploymentFullTime": "Full time",
+  "jobsEmploymentPartTime": "Part time",
+  "jobsEmploymentContract": "Contract",
+  "jobsEmploymentInternship": "Internship",
+  "jobsEmploymentFreelance": "Freelance",
+  "jobsAvailabilityNow": "Available now",
+  "jobsAvailabilityOpen": "Open to offers",
+  "jobsApplyTitle": "Apply for this job",
+  "jobsApplyInstructions": "How to apply",
+  "jobsContactTitle": "Contact",
+  "jobsContactCall": "Call",
+  "jobsContactWhatsapp": "WhatsApp",
+  "jobsContactEmail": "Email",
+  "jobsContactUnavailable": "No contact information is available.",
+  "jobsContactCopied": "Contact information copied.",
+  "jobsContactCopyNote": "Contact details are copied; direct calling is unavailable until the calling service is connected.",
+  "jobsCompanyTitle": "About the company",
+  "jobsDescriptionTitle": "Job description",
+  "jobsResponsibilitiesTitle": "Responsibilities",
+  "jobsRequirementsTitle": "Requirements",
+  "jobsExperienceLabel": "Experience required",
+  "jobsExperienceYears": "{years, plural, =0{Less than a year} =1{1 year} other{{years} years}}",
+  "@jobsExperienceYears": {
+    "description": "Required or possessed years of experience.",
+    "placeholders": {
+      "years": {
+        "type": "int"
+      }
+    }
+  },
+  "jobsSalaryLabel": "Salary",
+  "jobsSalaryNotDisclosed": "Salary not disclosed",
+  "jobsSalaryRange": "{min} - {max} {currency}",
+  "@jobsSalaryRange": {
+    "description": "Salary range with formatted bounds and currency.",
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      },
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "jobsSalaryFrom": "From {min} {currency}",
+  "@jobsSalaryFrom": {
+    "description": "Minimum salary with currency.",
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "currency": {
+        "type": "String"
+      }
+    }
+  },
+  "jobsSalaryPerMonth": "per month",
+  "jobsSalaryPerDay": "per day",
+  "jobsSalaryPerHour": "per hour",
+  "jobsSalaryPerYear": "per year",
+  "jobsPublishedLabel": "Published",
+  "jobsPublishedToday": "Posted today",
+  "jobsPublishedYesterday": "Posted yesterday",
+  "jobsPublishedDaysAgo": "Posted {count} days ago",
+  "@jobsPublishedDaysAgo": {
+    "description": "Relative publication date in days.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "jobsLocationLabel": "Location",
+  "jobsCategoryLabel": "Category",
+  "jobsVerifiedEmployer": "Verified employer",
+  "jobsFeaturedBadge": "Featured",
+  "jobsEmploymentTypeLabel": "Employment type",
+  "jobsViewDetails": "View details",
+  "jobsAddListing": "Add listing",
+  "jobsCreateVacancyTitle": "Post a job",
+  "jobsCreateCandidateTitle": "Create availability profile",
+  "jobsCreateVacancySubtitle": "Fill in the job details. Nothing is sent until the publishing service is connected.",
+  "jobsCreateCandidateSubtitle": "Fill in your professional details. Nothing is sent until the publishing service is connected.",
+  "jobsCreateUnavailableTitle": "Publishing unavailable",
+  "jobsCreateUnavailableMessage": "The job publishing service is not connected yet, and no data was submitted.",
+  "jobsFormRequired": "This field is required.",
+  "jobsFormTitleLabel": "Job title",
+  "jobsFormCompanyLabel": "Company name",
+  "jobsFormDescriptionLabel": "Job description",
+  "jobsFormResponsibilitiesLabel": "Responsibilities (one per line)",
+  "jobsFormRequirementsLabel": "Requirements (one per line)",
+  "jobsFormCategoryLabel": "Category",
+  "jobsFormEmploymentTypeLabel": "Employment type",
+  "jobsFormSalaryMinLabel": "Minimum salary",
+  "jobsFormSalaryMaxLabel": "Maximum salary",
+  "jobsFormLocationLabel": "Location",
+  "jobsFormPhoneLabel": "Contact phone",
+  "jobsFormEmailLabel": "Email",
+  "jobsFormApplicationLabel": "Application instructions",
+  "jobsFormSubmit": "Submit listing",
+  "jobsFormNameLabel": "Full name",
+  "jobsFormProfessionalTitleLabel": "Professional title",
+  "jobsFormSkillsLabel": "Skills (comma separated)",
+  "jobsFormExperienceYearsLabel": "Years of experience",
+  "jobsFormPreferredLocationLabel": "Preferred location",
+  "jobsFormDesiredTypeLabel": "Desired employment type",
+  "jobsFormSummaryLabel": "Professional summary",
+  "jobsFormEducationLabel": "Education",
+  "jobsFormCvLabel": "CV",
+  "jobsFormNumberInvalid": "Enter a valid number.",
+  "jobsFormEmailInvalid": "Enter a valid email address.",
+  "jobsFormCvUnavailable": "CV upload will be available after the files service is connected.",
+  "jobsFormDiscardTitle": "Discard changes?",
+  "jobsFormDiscardMessage": "You have unsaved data. Do you want to leave?",
+  "jobsFormDiscardConfirm": "Leave",
+  "jobsFormContinue": "Keep editing",
+  "jobsCandidateSkillsTitle": "Skills",
+  "jobsCandidateExperienceTitle": "Work experience",
+  "jobsCandidateEducationTitle": "Education",
+  "jobsCandidateCertificatesTitle": "Certificates",
+  "jobsCandidateSummaryTitle": "Professional summary",
+  "jobsCandidateAvailabilityLabel": "Availability",
+  "jobsCandidateDesiredTypeLabel": "Desired employment",
+  "jobsCandidatePreferredLocationLabel": "Preferred location",
+  "jobsCandidateCvTitle": "CV",
+  "jobsCandidateCvUnavailable": "No CV was attached; the available professional information is shown instead.",
+  "jobsDetailsTitle": "Job details",
+  "jobsCandidateDetailsTitle": "Candidate profile",
+  "jobsDetailsNotFound": "This item could not be found.",
+  "jobsFilterSheetTitle": "Filter results",
+  "jobsApplyFilter": "Apply",
+  "jobsReset": "Reset",
+  "jobsFromTo": "{from} - {to}",
+  "@jobsFromTo": {
+    "description": "A date or year range.",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "jobsPresent": "Present",
   "ok": "OK",
   "@profileMemberSince": {
     "description": "Year the user joined the platform.",

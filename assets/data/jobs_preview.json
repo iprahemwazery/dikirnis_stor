@@ -1,0 +1,478 @@
+{
+  "categories": [
+    {
+      "id": "technology",
+      "name_ar": "تقنية المعلومات",
+      "name_en": "Information technology",
+      "icon_key": "technology",
+      "providers_count": 3
+    },
+    {
+      "id": "finance",
+      "name_ar": "المحاسبة والمالية",
+      "name_en": "Accounting & finance",
+      "icon_key": "finance",
+      "providers_count": 2
+    },
+    {
+      "id": "education",
+      "name_ar": "التعليم والتدريب",
+      "name_en": "Education & training",
+      "icon_key": "education",
+      "providers_count": 2
+    },
+    {
+      "id": "medical",
+      "name_ar": "القطاع الطبي",
+      "name_en": "Medical sector",
+      "icon_key": "medical",
+      "providers_count": 2
+    },
+    {
+      "id": "hospitality",
+      "name_ar": "المطاعم والضيافة",
+      "name_en": "Restaurants & hospitality",
+      "icon_key": "restaurant",
+      "providers_count": 1
+    },
+    {
+      "id": "logistics",
+      "name_ar": "النقل والتوصيل",
+      "name_en": "Transport & delivery",
+      "icon_key": "transport",
+      "providers_count": 2
+    }
+  ],
+  "vacancies": [
+    {
+      "id": "vacancy_flutter_developer",
+      "title": "مطور Flutter أول",
+      "company_name": "مركز تكنو للتدريب",
+      "company_logo": "assets/images/businesses/techno_store.jpg",
+      "company_description": "مركز تدريب تقني يقدم دورات وبرامج تطبيقية في دكرنس، ويعمل على بناء أدوات تعليمية رقمية.",
+      "category_id": "technology",
+      "employment_type": "full_time",
+      "location": "شارع الجيش، دكرنس",
+      "published_days_ago": 2,
+      "short_description": "تطوير تطبيقات موبايل باستخدام Flutter مع فريق منتج صغير.",
+      "description": "نبحث عن مطور Flutter أول للانضمام إلى فريقنا في دكرنس. ستعمل على تطوير تطبيقات الموبايل الخاصة بالمركز وشركائه، من تصميم الواجهات حتى النشر والمتابعة، مع مشاركة فعالة في مراجعات الكود واتخاذ القرارات التقنية.",
+      "responsibilities": [
+        "تطوير وصيانة تطبيقات Flutter لأنظمة Android وiOS.",
+        "تحويل التصاميم إلى واجهات متجاوبة مع دعم العربية والإنجليزية.",
+        "مراجعة الكود ومتابعة جودة الأداء والاختبارات.",
+        "التعاون مع فريق الخدمات الخلفية لربط واجهات API."
+      ],
+      "requirements": [
+        "خبرة لا تقل عن 3 سنوات في تطوير Flutter.",
+        "إتقان Dart وفهم جيد لإدارة الحالة وClean Architecture.",
+        "خبرة في التعامل مع REST APIs والتخزين المحلي.",
+        "معرفة بـ Git وأدوات الاختبار.",
+        "يفضل خبرة في Firebase وCI/CD."
+      ],
+      "experience_years": 3,
+      "salary_min": 12000,
+      "salary_max": 18000,
+      "salary_currency": "EGP",
+      "salary_period": "monthly",
+      "contact_phone": "+201012345678",
+      "contact_whatsapp": "+201012345678",
+      "contact_email": "hr@techno.example",
+      "application_instructions": "أرسل السيرة الذاتية مع روابط لأعمال سابقة أو حساب GitHub، واذكر المسمى الوظيفي في عنوان الرسالة.",
+      "is_verified": true,
+      "is_featured": true
+    },
+    {
+      "id": "vacancy_accountant",
+      "title": "محاسب",
+      "company_name": "سوبرماركت الأمانة",
+      "company_logo": "assets/images/businesses/amana_market.jpg",
+      "company_description": "سوبرماركت يخدم أهل دكرنس ويوفر احتياجات المنزل اليومية.",
+      "category_id": "finance",
+      "employment_type": "full_time",
+      "location": "شارع بورسعيد، دكرنس",
+      "published_days_ago": 5,
+      "short_description": "متابعة الحسابات اليومية وإعداد التقارير الشهرية.",
+      "description": "مطلوب محاسب للعمل بدوام كامل في سوبرماركت الأمانة. تشمل المهام متابعة حركة الصندوق والمخزون وإعداد التقارير المالية الشهرية، والعمل مع فريق المبيعات لضبط الفواتير.",
+      "responsibilities": [
+        "تسجيل العمليات المالية اليومية.",
+        "متابعة المخزون والفواتير مع الموردين.",
+        "إعداد تقارير شهرية للإدارة.",
+        "مراجعة فروق الصندوق وحل الملاحظات."
+      ],
+      "requirements": [
+        "بكالوريوس تجارة أو محاسبة.",
+        "خبرة سنتين على الأقل في مجال المحاسبة.",
+        "إجادة Excel وبرامج المحاسبة.",
+        "الدقة والالتزام بمواعيد التقارير."
+      ],
+      "experience_years": 2,
+      "salary_min": 7000,
+      "salary_max": 9000,
+      "salary_currency": "EGP",
+      "salary_period": "monthly",
+      "contact_phone": "+201122334455",
+      "contact_email": "jobs@amana.example",
+      "application_instructions": "تقدم بالحضور إلى فرع السوبرماركت أو عبر البريد الإلكتروني.",
+      "is_verified": false,
+      "is_featured": false
+    },
+    {
+      "id": "vacancy_math_teacher",
+      "title": "مدرس رياضيات",
+      "company_name": "مركز النور التعليمي",
+      "category_id": "education",
+      "employment_type": "part_time",
+      "location": "حي الزهور، دكرنس",
+      "published_days_ago": 1,
+      "short_description": "تدريس الرياضيات للمرحلة الإعدادية بمجموعات صغيرة.",
+      "description": "يحتاج مركز النور التعليمي مدرس رياضيات للمرحلة الإعدادية، للعمل في فترات مسائية بمجموعات صغيرة. نبحث عن شخص قادر على تبسيط المفاهيم ومتابعة مستوى الطلاب.",
+      "responsibilities": [
+        "شرح منهج الرياضيات للمرحلة الإعدادية.",
+        "إعداد اختبارات ومتابعة تقدم الطلاب.",
+        "التواصل مع أولياء الأمور عند الحاجة."
+      ],
+      "requirements": [
+        "خبرة في التدريس لا تقل عن سنتين.",
+        "صبر وقدرة على التعامل مع الطلاب.",
+        "الالتزام بمواعيد الحصص."
+      ],
+      "experience_years": 2,
+      "salary_currency": "EGP",
+      "contact_phone": "+201055667788",
+      "application_instructions": "التواصل هاتفيًا لتحديد موعد مقابلة قصيرة.",
+      "is_verified": false,
+      "is_featured": false
+    },
+    {
+      "id": "vacancy_dentist",
+      "title": "طبيب أسنان",
+      "company_name": "عيادة د. سارة للأسنان",
+      "company_logo": "assets/images/businesses/sara_dental.jpg",
+      "company_description": "عيادة أسنان حديثة تقدم خدمات الفحص والعلاج والتجميل.",
+      "category_id": "medical",
+      "employment_type": "full_time",
+      "location": "شارع عبد السلام عارف، دكرنس",
+      "published_days_ago": 3,
+      "short_description": "انضم إلى فريق عيادة أسنان متكامل في دكرنس.",
+      "description": "تعلن عيادة د. سارة للأسنان عن حاجتها لطبيب أسنان بدوام كامل. تشمل الوظيفة الفحص والعلاج والحشو وتركيب التيجان، مع مساعدة فريق التمريض واستقبال المرضى.",
+      "responsibilities": [
+        "فحص وتشخيص حالات الأسنان.",
+        "تنفيذ العلاجات والحشوات والتيجان.",
+        "متابعة ملفات المرضى.",
+        "التعاون مع فريق العيادة."
+      ],
+      "requirements": [
+        "بكالوريوس طب الأسنان.",
+        "تصريح مزاولة المهنة ساري.",
+        "خبرة 4 سنوات على الأقل.",
+        "مهارات تواصل جيدة مع المرضى."
+      ],
+      "experience_years": 4,
+      "salary_min": 15000,
+      "salary_max": 25000,
+      "salary_currency": "EGP",
+      "salary_period": "monthly",
+      "contact_phone": "+201099887766",
+      "contact_whatsapp": "+201099887766",
+      "contact_email": "clinic@sara.example",
+      "application_instructions": "أرسل السيرة الذاتية وصورة التصريح عبر البريد الإلكتروني أو واتساب.",
+      "is_verified": true,
+      "is_featured": false
+    },
+    {
+      "id": "vacancy_barista",
+      "title": "باريستا",
+      "company_name": "كافيه لاونج",
+      "company_logo": "assets/images/businesses/cafe_lounge.jpg",
+      "company_description": "كافيه يقدم المشروبات والحلويات في أجواء هادئة.",
+      "category_id": "hospitality",
+      "employment_type": "part_time",
+      "location": "كورنيش دكرنس",
+      "published_days_ago": 0,
+      "short_description": "تحضير المشروبات وتقديم خدمة عملاء مميزة.",
+      "description": "يبحث كافيه لاونج عن باريستا بدوام جزئي للفترة المسائية. نبحث عن شخص لبق يحب التعامل مع العملاء وقادر على تحضير المشروبات الساخنة والباردة حسب معايير الكافيه.",
+      "responsibilities": [
+        "تحضير المشروبات الساخنة والباردة.",
+        "الحفاظ على نظافة البار والأدوات.",
+        "استقبال الطلبات وتقديمها للعملاء.",
+        "متابعة المخزون اليومي."
+      ],
+      "requirements": [
+        "خبرة سنة على الأقل في مجال الباريستا.",
+        "مظهر لائق ومهارات تواصل جيدة.",
+        "القدرة على العمل في الفترة المسائية."
+      ],
+      "experience_years": 1,
+      "salary_min": 350,
+      "salary_max": 500,
+      "salary_currency": "EGP",
+      "salary_period": "daily",
+      "contact_whatsapp": "+201211112222",
+      "application_instructions": "التقدم بالحضور إلى الكافيه أو التواصل عبر واتساب.",
+      "is_verified": false,
+      "is_featured": false
+    },
+    {
+      "id": "vacancy_delivery_driver",
+      "title": "مندوب توصيل",
+      "company_name": "مشويات الشرق",
+      "company_logo": "assets/images/businesses/east_grill.jpg",
+      "company_description": "مطعم مشويات يقدم خدمة التوصيل داخل دكرنس.",
+      "category_id": "logistics",
+      "employment_type": "freelance",
+      "location": "دكرنس والمناطق المجاورة",
+      "published_days_ago": 4,
+      "short_description": "توصيل الطلبات داخل دكرنس بدراجة أو موتوسيكل.",
+      "description": "مطلوب مندوب توصيل للعمل مع مطعم مشويات الشرق. العمل بنظام الحرية مع عدد طلبات يومي، ويشترط وجود وسيلة مواصلات شخصية ومعرفة جيدة بالطرق داخل دكرنس.",
+      "responsibilities": [
+        "استلام الطلبات وتوصيلها في الوقت المحدد.",
+        "التعامل مع العملاء بأسلوب لبق.",
+        "المحافظة على حالة الطلبات أثناء التوصيل."
+      ],
+      "requirements": [
+        "وسيلة مواصلات شخصية.",
+        "معرفة جيدة بطرق دكرنس.",
+        "خبرة سنة في التوصيل يفضل.",
+        "هاتف متاح للتواصل."
+      ],
+      "experience_years": 1,
+      "salary_min": 8000,
+      "salary_max": 12000,
+      "salary_currency": "EGP",
+      "salary_period": "monthly",
+      "contact_phone": "+201200003344",
+      "contact_whatsapp": "+201200003344",
+      "application_instructions": "تواصل هاتفيًا أو عبر واتساب لتحديد موعد التجربة.",
+      "is_verified": false,
+      "is_featured": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate_ahmed_flutter",
+      "full_name": "أحمد محمود",
+      "professional_title": "مطور Flutter",
+      "category_id": "technology",
+      "experience_years": 4,
+      "preferred_location": "دكرنس أو المنصورة",
+      "desired_employment_type": "full_time",
+      "summary": "مطور تطبيقات موبايل بخبرة أربع سنوات في بناء تطبيقات Flutter متكاملة، مهتم بجودة الكود وتجربة المستخدم والعمل مع فرق المنتج.",
+      "availability": "available_now",
+      "published_days_ago": 1,
+      "skills": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "REST APIs",
+        "Git",
+        "إدارة الحالة"
+      ],
+      "experience": [
+        {
+          "role": "مطور تطبيقات",
+          "company": "شركة النيل للبرمجيات",
+          "start_year": 2022,
+          "summary": "تطوير تطبيقات محلية للتجارة الإلكترونية وخدمات التوصيل."
+        },
+        {
+          "role": "مطور Flutter",
+          "company": "فريق مستقل",
+          "start_year": 2021,
+          "end_year": 2022,
+          "summary": "تنفيذ واجهات وتطبيقات صغيرة لعملاء محليين."
+        }
+      ],
+      "education": [
+        {
+          "degree": "بكالوريوس علوم الحاسب",
+          "institution": "جامعة المنصورة",
+          "graduation_year": 2021
+        }
+      ],
+      "certificates": ["شهادة Flutter المتقدمة"],
+      "contact_phone": "+201011112222",
+      "contact_email": "ahmed.flutter@example.com",
+      "is_verified": true
+    },
+    {
+      "id": "candidate_mariam_accountant",
+      "full_name": "مريم السيد",
+      "professional_title": "محاسبة",
+      "category_id": "finance",
+      "experience_years": 6,
+      "preferred_location": "دكرنس",
+      "desired_employment_type": "full_time",
+      "summary": "محاسبة بخبرة ست سنوات في المحلات التجارية والشركات الصغيرة، متخصصة في إعداد التقارير الشهرية وضبط المخزون.",
+      "availability": "open_to_offers",
+      "published_days_ago": 2,
+      "skills": [
+        "المحاسبة المالية",
+        "Excel",
+        "إعداد التقارير",
+        "الضرائب",
+        "إدارة المخزون"
+      ],
+      "experience": [
+        {
+          "role": "محاسبة أولى",
+          "company": "شركة الدلتا للتجارة",
+          "start_year": 2019,
+          "summary": "مسؤولة عن الحسابات اليومية والتقارير الشهرية."
+        }
+      ],
+      "education": [
+        {
+          "degree": "بكالوريوس تجارة",
+          "institution": "جامعة المنصورة",
+          "graduation_year": 2018
+        }
+      ],
+      "contact_phone": "+201033334444",
+      "contact_email": "mariam.account@example.com",
+      "is_verified": false
+    },
+    {
+      "id": "candidate_omar_teacher",
+      "full_name": "عمر حسن",
+      "professional_title": "مدرس لغة إنجليزية",
+      "category_id": "education",
+      "experience_years": 3,
+      "preferred_location": "دكرنس والمنصورة",
+      "desired_employment_type": "part_time",
+      "summary": "مدرس لغة إنجليزية للمرحلتين الإعدادية والثانوية، يركز على التأسيس والمحادثة ويستخدم أنشطة تفاعلية داخل الحصة.",
+      "availability": "available_now",
+      "published_days_ago": 0,
+      "skills": [
+        "تدريس اللغة الإنجليزية",
+        "إعداد المناهج",
+        "المحادثة",
+        "التقييم"
+      ],
+      "experience": [
+        {
+          "role": "مدرس لغة إنجليزية",
+          "company": "مركز تعليمي خاص",
+          "start_year": 2023,
+          "summary": "تدريس مجموعات للمرحلتين الإعدادية والثانوية."
+        }
+      ],
+      "education": [
+        {
+          "degree": "بكالوريوس آداب قسم لغة إنجليزية",
+          "institution": "جامعة المنصورة",
+          "graduation_year": 2022
+        }
+      ],
+      "certificates": ["شهادة TEFL"],
+      "contact_phone": "+201055556666",
+      "is_verified": false
+    },
+    {
+      "id": "candidate_nour_nurse",
+      "full_name": "نور عبد الله",
+      "professional_title": "ممرضة",
+      "category_id": "medical",
+      "experience_years": 5,
+      "preferred_location": "دكرنس",
+      "desired_employment_type": "full_time",
+      "summary": "ممرضة بخبرة خمس سنوات في العيادات والمراكز الطبية، متمكنة من الرعاية الأساسية ومتابعة المرضى والإسعافات الأولية.",
+      "availability": "open_to_offers",
+      "published_days_ago": 3,
+      "skills": [
+        "الرعاية الأساسية",
+        "الإسعافات الأولية",
+        "متابعة المرضى",
+        "التعامل مع الأجهزة الطبية"
+      ],
+      "experience": [
+        {
+          "role": "ممرضة",
+          "company": "مركز الشفاء الطبي",
+          "start_year": 2021,
+          "summary": "متابعة المرضى ومساعدة الأطباء في العيادات."
+        }
+      ],
+      "education": [
+        {
+          "degree": "دبلوم تمريض",
+          "institution": "معهد التمريض بالمنصورة",
+          "graduation_year": 2020
+        }
+      ],
+      "contact_phone": "+201077778888",
+      "is_verified": true
+    },
+    {
+      "id": "candidate_khaled_driver",
+      "full_name": "خالد إبراهيم",
+      "professional_title": "سائق توصيل",
+      "category_id": "logistics",
+      "experience_years": 8,
+      "preferred_location": "دكرنس",
+      "desired_employment_type": "freelance",
+      "summary": "سائق توصيل بخبرة ثماني سنوات داخل دكرنس والمراكز المجاورة، حاصل على رخصة قيادة سارية ويعمل بنظام الحرية.",
+      "availability": "available_now",
+      "published_days_ago": 4,
+      "skills": [
+        "قيادة آمنة",
+        "معرفة الطرق",
+        "خدمة العملاء",
+        "الالتزام بالمواعيد"
+      ],
+      "experience": [
+        {
+          "role": "سائق توصيل",
+          "company": "مطعم مشويات الشرق",
+          "start_year": 2018,
+          "summary": "توصيل الطلبات اليومية داخل دكرنس."
+        }
+      ],
+      "education": [
+        {
+          "degree": "الثانوية العامة",
+          "institution": "مدرسة دكرنس الثانوية",
+          "graduation_year": 2014
+        }
+      ],
+      "contact_phone": "+201088889999",
+      "is_verified": false
+    },
+    {
+      "id": "candidate_sara_designer",
+      "full_name": "سارة فؤاد",
+      "professional_title": "مصممة جرافيك",
+      "category_id": "technology",
+      "experience_years": 2,
+      "preferred_location": "عن بعد / دكرنس",
+      "desired_employment_type": "freelance",
+      "summary": "مصممة جرافيك متخصصة في الهوية البصرية وتصميم واجهات المحتوى، تعمل عن بعد مع عملاء ومشروعات صغيرة.",
+      "availability": "available_now",
+      "published_days_ago": 5,
+      "skills": [
+        "Photoshop",
+        "Illustrator",
+        "الهوية البصرية",
+        "تصميم واجهات",
+        "Figma"
+      ],
+      "experience": [
+        {
+          "role": "مصممة جرافيك",
+          "company": "عمل حر",
+          "start_year": 2024,
+          "summary": "تصميم هويات بصرية ومنشورات لمشروعات محلية."
+        }
+      ],
+      "education": [
+        {
+          "degree": "بكالوريوس فنون تطبيقية",
+          "institution": "جامعة المنصورة",
+          "graduation_year": 2023
+        }
+      ],
+      "certificates": ["دبلوم تصميم واجهات المستخدم"],
+      "contact_email": "sara.design@example.com",
+      "is_verified": false
+    }
+  ]
+}

@@ -15,6 +15,7 @@ class HomeContent extends Equatable {
     required this.recentlyAdded,
     required this.medical,
     required this.restaurants,
+    this.businesses = const {},
     this.advertisement,
   });
 
@@ -26,7 +27,12 @@ class HomeContent extends Equatable {
   final List<Business> recentlyAdded;
   final List<Business> medical;
   final List<Business> restaurants;
+  final Map<String, List<Business>> businesses;
   final HomeAdvertisement? advertisement;
+
+  List<Business> businessesOf(String categoryId) {
+    return businesses[categoryId] ?? const [];
+  }
 
   bool get isEmpty =>
       banners.isEmpty &&
@@ -34,7 +40,8 @@ class HomeContent extends Equatable {
       mostViewed.isEmpty &&
       recentlyAdded.isEmpty &&
       medical.isEmpty &&
-      restaurants.isEmpty;
+      restaurants.isEmpty &&
+      businesses.isEmpty;
 
   @override
   List<Object?> get props => [
@@ -46,6 +53,7 @@ class HomeContent extends Equatable {
     recentlyAdded,
     medical,
     restaurants,
+    businesses,
     advertisement,
   ];
 }

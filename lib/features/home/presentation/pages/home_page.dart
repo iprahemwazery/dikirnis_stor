@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../../../core/widgets/app_empty_state.dart';
 import '../../../../core/widgets/app_error_state.dart';
 import '../../../../l10n/l10n.dart';
+import '../../../../router/app_routes.dart';
 import '../../../../theme/app_spacing.dart';
 import '../../domain/entities/business.dart';
 import '../../domain/entities/home_advertisement.dart';
@@ -19,56 +23,87 @@ import '../widgets/home_header.dart';
 import '../widgets/home_loading_view.dart';
 import '../widgets/home_section_header.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  static const Duration _exitWindow = Duration(seconds: 2);
+
+  DateTime? _lastBackPress;
+
+  void _handleBackPress() {
+    final now = DateTime.now();
+    final lastPress = _lastBackPress;
+    if (lastPress != null && now.difference(lastPress) < _exitWindow) {
+      _lastBackPress = null;
+      SystemNavigator.pop();
+      return;
+    }
+
+    _lastBackPress = now;
+    _showMessage(context, context.l10n.pressBackAgainToExit);
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: BlocListener<HomeCubit, HomeState>(
-          listenWhen: (previous, current) =>
-              previous.status != current.status &&
-              current.status == HomeStatus.failure,
-          listener: (context, state) {
-            if (state.content == null) {
-              return;
-            }
-            _showMessage(context, l10n.homeErrorMessage);
-          },
-          child: BlocBuilder<HomeCubit, HomeState>(
-            buildWhen: (previous, current) =>
-                previous.status != current.status ||
-                previous.content != current.content ||
-                previous.advertisementDismissed !=
-                    current.advertisementDismissed,
-            builder: (context, state) {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (!didPop) {
+          _handleBackPress();
+        }
+      },
+      child: Scaffold(
+        body: SafeArea(
+          bottom: false,
+          child: BlocListener<HomeCubit, HomeState>(
+            listenWhen: (previous, current) =>
+                previous.status != current.status &&
+                current.status == HomeStatus.failure,
+            listener: (context, state) {
               if (state.content == null) {
-                if (state.status == HomeStatus.failure) {
-                  return AppErrorState(
-                    message: l10n.homeErrorMessage,
-                    retryLabel: l10n.retry,
-                    onRetry: () => context.read<HomeCubit>().load(force: true),
+                return;
+              }
+              _showMessage(context, l10n.homeErrorMessage);
+            },
+            child: BlocBuilder<HomeCubit, HomeState>(
+              buildWhen: (previous, current) =>
+                  previous.status != current.status ||
+                  previous.content != current.content ||
+                  previous.advertisementDismissed !=
+                      current.advertisementDismissed,
+              builder: (context, state) {
+                if (state.content == null) {
+                  if (state.status == HomeStatus.failure) {
+                    return AppErrorState(
+                      message: l10n.homeErrorMessage,
+                      retryLabel: l10n.retry,
+                      onRetry: () =>
+                          context.read<HomeCubit>().load(force: true),
+                    );
+                  }
+                  return const HomeLoadingView();
+                }
+
+                if (state.status == HomeStatus.empty) {
+                  return AppEmptyState(
+                    message: l10n.homeEmptyMessage,
+                    icon: Icons.storefront_outlined,
                   );
                 }
-                return const HomeLoadingView();
-              }
 
-              if (state.status == HomeStatus.empty) {
-                return AppEmptyState(
-                  message: l10n.homeEmptyMessage,
-                  icon: Icons.storefront_outlined,
+                return _HomeContentView(
+                  content: state.content!,
+                  advertisement: state.advertisement,
                 );
-              }
-
-              return _HomeContentView(
-                content: state.content!,
-                advertisement: state.advertisement,
-              );
-            },
+              },
+            ),
           ),
         ),
       ),
@@ -102,12 +137,24 @@ class _HomeContentView extends StatelessWidget {
       showComingSoon();
     }
 
+    void openBusinesses(String section) {
+      context.push(AppRoutes.businessDirectoryPath(section));
+    }
+
     void handleCategory(HomeCategory category) {
-      showComingSoon();
+      if (category.id == 'jobs') {
+        context.push(AppRoutes.jobs);
+        return;
+      }
+      if (category.isMore || category.id == 'more') {
+        context.go(AppRoutes.explore);
+        return;
+      }
+      openBusinesses(category.id);
     }
 
     void handleBusiness(Business business) {
-      showComingSoon();
+      context.push(AppRoutes.businessDetailsPath(business.id));
     }
 
     return RefreshIndicator(
@@ -197,7 +244,7 @@ class _HomeContentView extends StatelessWidget {
               child: HomeSectionHeader(
                 title: l10n.medicalSectorTitle,
                 actionLabel: l10n.viewAll,
-                onAction: showComingSoon,
+                onAction: () => openBusinesses('medical'),
               ),
             ),
             SliverToBoxAdapter(
@@ -216,7 +263,7 @@ class _HomeContentView extends StatelessWidget {
               child: HomeSectionHeader(
                 title: l10n.restaurantsCafesTitle,
                 actionLabel: l10n.viewAll,
-                onAction: showComingSoon,
+                onAction: () => openBusinesses('restaurants_cafes'),
               ),
             ),
             SliverToBoxAdapter(

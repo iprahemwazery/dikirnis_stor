@@ -551,5 +551,495 @@ class AppLocalizationsAr extends AppLocalizations {
   String get currencyEgp => 'ج.م';
 
   @override
+  String get businessesTitle => 'الأعمال';
+
+  @override
+  String get pressBackAgainToExit => 'اضغط مرة أخرى للخروج من التطبيق';
+
+  @override
+  String get businessesAllLabel => 'الكل';
+
+  @override
+  String get businessesSearchHint => 'ابحث عن نشاط أو مكان...';
+
+  @override
+  String get businessesNoSearchResults => 'لا توجد أنشطة مطابقة لبحثك.';
+
+  @override
+  String get businessesCountLabel => 'نشاط';
+
+  @override
+  String get businessesAddCta => 'إضافة نشاط';
+
+  @override
+  String get businessesAddTitle => 'إضافة نشاط جديد';
+
+  @override
+  String get businessesFormName => 'اسم النشاط';
+
+  @override
+  String get businessesFormLocation => 'العنوان';
+
+  @override
+  String get businessesFormDescription => 'وصف مختصر';
+
+  @override
+  String get businessesFormPhone => 'رقم التواصل (اختياري)';
+
+  @override
+  String get businessesFormCategory => 'التصنيف';
+
+  @override
+  String get businessesFormRequired => 'هذا الحقل مطلوب.';
+
+  @override
+  String get businessesFormIntro =>
+      'أدخل بيانات النشاط. لن يتم حفظها حتى يتم ربط خدمة النشر.';
+
+  @override
+  String get businessesFormSubmit => 'إرسال النشاط';
+
+  @override
+  String get businessesCreateUnavailableTitle => 'النشر غير متاح حاليًا';
+
+  @override
+  String get businessesCreateUnavailableMessage =>
+      'تم التحقق من البيانات، لكن حفظ الأنشطة سيتوفر بعد ربط الـBackend.';
+
+  @override
+  String get businessesFormDiscardTitle => 'تجاهل التغييرات؟';
+
+  @override
+  String get businessesFormDiscardMessage =>
+      'سيتم فقدان بيانات النشاط التي أدخلتها.';
+
+  @override
+  String get businessesFormDiscardConfirm => 'خروج';
+
+  @override
+  String get businessesFormContinue => 'متابعة التحرير';
+
+  @override
+  String get businessDetailsTitle => 'تفاصيل النشاط';
+
+  @override
+  String get businessAboutTitle => 'عن النشاط';
+
+  @override
+  String get businessLocationTitle => 'الموقع';
+
+  @override
+  String get businessContactTitle => 'التواصل';
+
+  @override
+  String get businessRatingLabel => 'التقييم';
+
+  @override
+  String get businessesEmpty => 'لا توجد أنشطة في هذا القسم حاليًا.';
+
+  @override
+  String get businessesErrorMessage => 'تعذر تحميل الأنشطة. حاول مرة أخرى.';
+
+  @override
+  String get businessesNotFound => 'لم يتم العثور على هذا النشاط.';
+
+  @override
+  String get businessContactUnavailable =>
+      'لا توجد بيانات تواصل متاحة لهذا النشاط.';
+
+  @override
+  String get businessMapUnavailable =>
+      'الموقع معروض كنص؛ الخريطة ستتوفر بعد ربط خدمة الخرائط.';
+
+  @override
+  String get jobsTitle => 'الوظائف';
+
+  @override
+  String get jobsVacanciesTab => 'الوظائف';
+
+  @override
+  String get jobsCandidatesTab => 'متاح للعمل';
+
+  @override
+  String get jobsSearchVacanciesHint => 'ابحث عن وظيفة أو شركة...';
+
+  @override
+  String get jobsSearchCandidatesHint => 'ابحث بالاسم أو المهارة...';
+
+  @override
+  String get jobsAllCategories => 'الكل';
+
+  @override
+  String get jobsFilters => 'الفلاتر';
+
+  @override
+  String get jobsClearFilters => 'مسح الفلاتر';
+
+  @override
+  String jobsResultsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نتيجة',
+      many: '$count نتيجة',
+      few: '$count نتائج',
+      two: 'نتيجتان',
+      one: 'نتيجة واحدة',
+      zero: 'لا توجد نتائج',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get jobsVacanciesEmpty => 'لا توجد وظائف متاحة حاليًا.';
+
+  @override
+  String get jobsCandidatesEmpty => 'لا يوجد أشخاص متاحون للعمل حاليًا.';
+
+  @override
+  String get jobsNoSearchResults => 'لا توجد نتائج مطابقة لبحثك أو فلاترك.';
+
+  @override
+  String get jobsErrorMessage => 'تعذر تحميل الوظائف. حاول مرة أخرى.';
+
+  @override
+  String get jobsFilterCategory => 'القسم';
+
+  @override
+  String get jobsFilterEmploymentType => 'نوع الوظيفة';
+
+  @override
+  String get jobsFilterAvailability => 'حالة الإتاحة';
+
+  @override
+  String get jobsFilterSort => 'الترتيب';
+
+  @override
+  String get jobsSortNewest => 'الأحدث';
+
+  @override
+  String get jobsSortSalaryHigh => 'الأعلى راتبًا';
+
+  @override
+  String get jobsSortSalaryLow => 'الأقل راتبًا';
+
+  @override
+  String get jobsSortExperienceHigh => 'الأكثر خبرة';
+
+  @override
+  String get jobsEmploymentFullTime => 'دوام كامل';
+
+  @override
+  String get jobsEmploymentPartTime => 'دوام جزئي';
+
+  @override
+  String get jobsEmploymentContract => 'عقد';
+
+  @override
+  String get jobsEmploymentInternship => 'تدريب';
+
+  @override
+  String get jobsEmploymentFreelance => 'عمل حر';
+
+  @override
+  String get jobsAvailabilityNow => 'متاح الآن';
+
+  @override
+  String get jobsAvailabilityOpen => 'منفتح على العروض';
+
+  @override
+  String get jobsApplyTitle => 'التقديم على الوظيفة';
+
+  @override
+  String get jobsApplyInstructions => 'طريقة التقديم';
+
+  @override
+  String get jobsContactTitle => 'التواصل';
+
+  @override
+  String get jobsContactCall => 'اتصال';
+
+  @override
+  String get jobsContactWhatsapp => 'واتساب';
+
+  @override
+  String get jobsContactEmail => 'البريد الإلكتروني';
+
+  @override
+  String get jobsContactUnavailable => 'لا توجد بيانات تواصل متاحة.';
+
+  @override
+  String get jobsContactCopied => 'تم نسخ بيانات التواصل.';
+
+  @override
+  String get jobsContactCopyNote =>
+      'يتم نسخ بيانات التواصل؛ الاتصال المباشر غير متاح حتى يتم ربط خدمة الاتصال.';
+
+  @override
+  String get jobsCompanyTitle => 'عن الشركة';
+
+  @override
+  String get jobsDescriptionTitle => 'وصف الوظيفة';
+
+  @override
+  String get jobsResponsibilitiesTitle => 'المسؤوليات';
+
+  @override
+  String get jobsRequirementsTitle => 'المتطلبات';
+
+  @override
+  String get jobsExperienceLabel => 'الخبرة المطلوبة';
+
+  @override
+  String jobsExperienceYears(int years) {
+    String _temp0 = intl.Intl.pluralLogic(
+      years,
+      locale: localeName,
+      other: '$years سنة',
+      many: '$years سنة',
+      few: '$years سنوات',
+      two: 'سنتان',
+      one: 'سنة واحدة',
+      zero: 'أقل من سنة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get jobsSalaryLabel => 'الراتب';
+
+  @override
+  String get jobsSalaryNotDisclosed => 'الراتب غير محدد';
+
+  @override
+  String jobsSalaryRange(String min, String max, String currency) {
+    return '$min - $max $currency';
+  }
+
+  @override
+  String jobsSalaryFrom(String min, String currency) {
+    return 'من $min $currency';
+  }
+
+  @override
+  String get jobsSalaryPerMonth => 'شهريًا';
+
+  @override
+  String get jobsSalaryPerDay => 'يوميًا';
+
+  @override
+  String get jobsSalaryPerHour => 'بالساعة';
+
+  @override
+  String get jobsSalaryPerYear => 'سنويًا';
+
+  @override
+  String get jobsPublishedLabel => 'تاريخ النشر';
+
+  @override
+  String get jobsPublishedToday => 'نُشر اليوم';
+
+  @override
+  String get jobsPublishedYesterday => 'نُشر أمس';
+
+  @override
+  String jobsPublishedDaysAgo(int count) {
+    return 'نُشر منذ $count أيام';
+  }
+
+  @override
+  String get jobsLocationLabel => 'الموقع';
+
+  @override
+  String get jobsCategoryLabel => 'القسم';
+
+  @override
+  String get jobsVerifiedEmployer => 'جهة عمل موثّقة';
+
+  @override
+  String get jobsFeaturedBadge => 'مميزة';
+
+  @override
+  String get jobsEmploymentTypeLabel => 'نوع الدوام';
+
+  @override
+  String get jobsViewDetails => 'عرض التفاصيل';
+
+  @override
+  String get jobsAddListing => 'إضافة إعلان';
+
+  @override
+  String get jobsCreateVacancyTitle => 'نشر وظيفة';
+
+  @override
+  String get jobsCreateCandidateTitle => 'إنشاء ملف للعمل';
+
+  @override
+  String get jobsCreateVacancySubtitle =>
+      'املأ بيانات الوظيفة. لن يتم إرسال أي بيانات حتى يتم ربط خدمة النشر.';
+
+  @override
+  String get jobsCreateCandidateSubtitle =>
+      'املأ بياناتك المهنية. لن يتم إرسال أي بيانات حتى يتم ربط خدمة النشر.';
+
+  @override
+  String get jobsCreateUnavailableTitle => 'النشر غير متاح';
+
+  @override
+  String get jobsCreateUnavailableMessage =>
+      'لم يتم ربط خدمة نشر الوظائف بعد، ولم يتم إرسال أي بيانات.';
+
+  @override
+  String get jobsFormRequired => 'هذا الحقل مطلوب.';
+
+  @override
+  String get jobsFormTitleLabel => 'المسمى الوظيفي';
+
+  @override
+  String get jobsFormCompanyLabel => 'اسم الشركة';
+
+  @override
+  String get jobsFormDescriptionLabel => 'وصف الوظيفة';
+
+  @override
+  String get jobsFormResponsibilitiesLabel => 'المسؤوليات (سطر لكل بند)';
+
+  @override
+  String get jobsFormRequirementsLabel => 'المتطلبات (سطر لكل بند)';
+
+  @override
+  String get jobsFormCategoryLabel => 'القسم';
+
+  @override
+  String get jobsFormEmploymentTypeLabel => 'نوع الدوام';
+
+  @override
+  String get jobsFormSalaryMinLabel => 'أقل راتب';
+
+  @override
+  String get jobsFormSalaryMaxLabel => 'أعلى راتب';
+
+  @override
+  String get jobsFormLocationLabel => 'الموقع';
+
+  @override
+  String get jobsFormPhoneLabel => 'رقم التواصل';
+
+  @override
+  String get jobsFormEmailLabel => 'البريد الإلكتروني';
+
+  @override
+  String get jobsFormApplicationLabel => 'طريقة التقديم';
+
+  @override
+  String get jobsFormSubmit => 'إرسال الإعلان';
+
+  @override
+  String get jobsFormNameLabel => 'الاسم الكامل';
+
+  @override
+  String get jobsFormProfessionalTitleLabel => 'المسمى المهني';
+
+  @override
+  String get jobsFormSkillsLabel => 'المهارات (مفصولة بفواصل)';
+
+  @override
+  String get jobsFormExperienceYearsLabel => 'سنوات الخبرة';
+
+  @override
+  String get jobsFormPreferredLocationLabel => 'الموقع المفضل';
+
+  @override
+  String get jobsFormDesiredTypeLabel => 'نوع العمل المطلوب';
+
+  @override
+  String get jobsFormSummaryLabel => 'نبذة مهنية';
+
+  @override
+  String get jobsFormEducationLabel => 'التعليم';
+
+  @override
+  String get jobsFormCvLabel => 'السيرة الذاتية';
+
+  @override
+  String get jobsFormNumberInvalid => 'أدخل رقمًا صحيحًا.';
+
+  @override
+  String get jobsFormEmailInvalid => 'أدخل بريدًا إلكترونيًا صحيحًا.';
+
+  @override
+  String get jobsFormCvUnavailable =>
+      'رفع السيرة الذاتية سيتوفر بعد ربط خدمة الملفات.';
+
+  @override
+  String get jobsFormDiscardTitle => 'تجاهل التغييرات؟';
+
+  @override
+  String get jobsFormDiscardMessage => 'لديك بيانات لم تُرسل. هل تريد الخروج؟';
+
+  @override
+  String get jobsFormDiscardConfirm => 'خروج';
+
+  @override
+  String get jobsFormContinue => 'متابعة التحرير';
+
+  @override
+  String get jobsCandidateSkillsTitle => 'المهارات';
+
+  @override
+  String get jobsCandidateExperienceTitle => 'الخبرة العملية';
+
+  @override
+  String get jobsCandidateEducationTitle => 'التعليم';
+
+  @override
+  String get jobsCandidateCertificatesTitle => 'الشهادات';
+
+  @override
+  String get jobsCandidateSummaryTitle => 'نبذة مهنية';
+
+  @override
+  String get jobsCandidateAvailabilityLabel => 'الإتاحة';
+
+  @override
+  String get jobsCandidateDesiredTypeLabel => 'نوع العمل المطلوب';
+
+  @override
+  String get jobsCandidatePreferredLocationLabel => 'الموقع المفضل';
+
+  @override
+  String get jobsCandidateCvTitle => 'السيرة الذاتية';
+
+  @override
+  String get jobsCandidateCvUnavailable =>
+      'لم يتم إرفاق سيرة ذاتية، وتُعرض البيانات المهنية المتاحة بدلًا منها.';
+
+  @override
+  String get jobsDetailsTitle => 'تفاصيل الوظيفة';
+
+  @override
+  String get jobsCandidateDetailsTitle => 'الملف المهني';
+
+  @override
+  String get jobsDetailsNotFound => 'لم يتم العثور على هذا العنصر.';
+
+  @override
+  String get jobsFilterSheetTitle => 'تصفية النتائج';
+
+  @override
+  String get jobsApplyFilter => 'تطبيق';
+
+  @override
+  String get jobsReset => 'إعادة تعيين';
+
+  @override
+  String jobsFromTo(String from, String to) {
+    return '$from - $to';
+  }
+
+  @override
+  String get jobsPresent => 'حتى الآن';
+
+  @override
   String get ok => 'حسنًا';
 }

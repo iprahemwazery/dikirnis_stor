@@ -19,6 +19,7 @@ class HomeContentModel {
     required this.recentlyAdded,
     required this.medical,
     required this.restaurants,
+    this.businesses = const {},
     this.advertisement,
   });
 
@@ -34,6 +35,8 @@ class HomeContentModel {
   final List<BusinessModel> recentlyAdded;
   final List<BusinessModel> medical;
   final List<BusinessModel> restaurants;
+  @JsonKey(defaultValue: <String, List<BusinessModel>>{})
+  final Map<String, List<BusinessModel>> businesses;
   final HomeAdvertisementModel? advertisement;
 
   Map<String, dynamic> toJson() => _$HomeContentModelToJson(this);
@@ -60,6 +63,12 @@ class HomeContentModel {
       restaurants: restaurants
           .map((business) => business.toEntity())
           .toList(growable: false),
+      businesses: businesses.map(
+        (categoryId, items) => MapEntry(
+          categoryId,
+          items.map((business) => business.toEntity()).toList(growable: false),
+        ),
+      ),
       advertisement: advertisement?.toEntity(),
     );
   }

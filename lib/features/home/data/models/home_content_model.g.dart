@@ -28,6 +28,16 @@ HomeContentModel _$HomeContentModelFromJson(Map<String, dynamic> json) =>
       restaurants: (json['restaurants'] as List<dynamic>)
           .map((e) => BusinessModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      businesses:
+          (json['businesses'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              k,
+              (e as List<dynamic>)
+                  .map((e) => BusinessModel.fromJson(e as Map<String, dynamic>))
+                  .toList(),
+            ),
+          ) ??
+          {},
       advertisement: json['advertisement'] == null
           ? null
           : HomeAdvertisementModel.fromJson(
@@ -45,5 +55,6 @@ Map<String, dynamic> _$HomeContentModelToJson(HomeContentModel instance) =>
       'recently_added': instance.recentlyAdded,
       'medical': instance.medical,
       'restaurants': instance.restaurants,
+      'businesses': instance.businesses,
       'advertisement': instance.advertisement,
     };

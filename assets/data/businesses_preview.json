@@ -1,0 +1,340 @@
+{
+  "categories": {
+    "commercial_sales": [
+      {
+        "id": "commercial_techno",
+        "name": "تكنو ستور",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/electronics.jpg",
+        "rating": 4.6,
+        "views": 260,
+        "description": "أجهزة كهربائية وإلكترونيات وخدمة ما بعد البيع",
+        "is_verified": true
+      },
+      {
+        "id": "commercial_amana",
+        "name": "سوبرماركت الأمانة",
+        "location": "شارع النصر، دكرنس",
+        "image": "assets/images/businesses/grocery.jpg",
+        "rating": 4.8,
+        "views": 190,
+        "description": "بقالة وسوبرماركت بأسعار مناسبة",
+        "is_new": true
+      },
+      {
+        "id": "commercial_beauty",
+        "name": "صالون لمسة جمال",
+        "location": "حي الزهور، دكرنس",
+        "image": "assets/images/businesses/salon.jpg",
+        "rating": 4.6,
+        "views": 225,
+        "description": "تجميل وعناية بالشعر والبشرة",
+        "is_new": true
+      },
+      {
+        "id": "commercial_bakery",
+        "name": "مخبز الحرمين",
+        "location": "شارع الترعة، دكرنس",
+        "image": "assets/images/businesses/bakery.jpg",
+        "rating": 4.7,
+        "views": 310,
+        "description": "خبز طازج وحلويات يومية",
+        "is_new": true
+      }
+    ],
+    "restaurants_cafes": [
+      {
+        "id": "nile_fish",
+        "name": "أسماك النيل",
+        "location": "شارع الجيش، دكرنس",
+        "image": "assets/images/businesses/fish_house.jpg",
+        "rating": 4.8,
+        "views": 1840,
+        "description": "مأكولات بحرية طازجة ومشويات",
+        "is_verified": true
+      },
+      {
+        "id": "east_grill",
+        "name": "مشويات الشرق",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/grill.jpg",
+        "rating": 4.6,
+        "views": 1120,
+        "description": "كباب ومشويات على الفحم"
+      },
+      {
+        "id": "cafe_lounge_restaurant",
+        "name": "كافيه لاونج",
+        "location": "ميدان الساعة، دكرنس",
+        "image": "assets/images/businesses/cafe.jpg",
+        "rating": 4.7,
+        "views": 1520,
+        "description": "قهوة مختصة وحلويات طازجة"
+      },
+      {
+        "id": "east_sweets",
+        "name": "حلويات الشرق",
+        "location": "شارع النصر، دكرنس",
+        "image": "assets/images/businesses/dessert.jpg",
+        "rating": 4.9,
+        "views": 870,
+        "description": "حلويات شرقية وغربية طازجة"
+      }
+    ],
+    "medical": [
+      {
+        "id": "shifa_medical_center",
+        "name": "مركز الشفاء الطبي",
+        "location": "شارع المستشفى، دكرنس",
+        "image": "assets/images/businesses/clinic.jpg",
+        "rating": 4.9,
+        "views": 1310,
+        "description": "عيادات باطنة وأطفال وأشعة",
+        "is_verified": true
+      },
+      {
+        "id": "sara_dental",
+        "name": "عيادة د. سارة للأسنان",
+        "location": "شارع الجيش، دكرنس",
+        "image": "assets/images/businesses/dentist.jpg",
+        "rating": 4.8,
+        "views": 940,
+        "description": "تجميل وزراعة وتقويم الأسنان",
+        "is_verified": true
+      },
+      {
+        "id": "noor_pharmacy",
+        "name": "صيدلية النور",
+        "location": "ميدان الساعة، دكرنس",
+        "image": "assets/images/businesses/pharmacy.jpg",
+        "rating": 4.7,
+        "views": 1080,
+        "description": "توصيل الأدوية على مدار اليوم",
+        "is_sponsored": true
+      },
+      {
+        "id": "dikirnis_lab",
+        "name": "معمل دكرنس للتحاليل",
+        "location": "شارع بورسعيد، دكرنس",
+        "image": "assets/images/businesses/lab.jpg",
+        "rating": 4.6,
+        "views": 620,
+        "description": "تحاليل طبية دقيقة ونتائج سريعة"
+      }
+    ],
+    "sports": [
+      {
+        "id": "sports_gym_plus",
+        "name": "جيم بلس",
+        "location": "شارع بورسعيد، دكرنس",
+        "image": "assets/images/businesses/gym.jpg",
+        "rating": 4.6,
+        "views": 980,
+        "description": "صالة ألعاب رياضية ومدربون متخصصون",
+        "is_verified": true
+      },
+      {
+        "id": "sports_elite_court",
+        "name": "ملعب النخبة الخماسي",
+        "location": "حي الزهور، دكرنس",
+        "image": "assets/images/businesses/gym.jpg",
+        "rating": 4.5,
+        "views": 430,
+        "description": "ملعب خماسي متاح للحجز اليومي",
+        "is_new": true
+      },
+      {
+        "id": "sports_fitness_house",
+        "name": "بيت اللياقة",
+        "location": "شارع الجيش، دكرنس",
+        "image": "assets/images/businesses/gym.jpg",
+        "rating": 4.4,
+        "views": 310,
+        "description": "تدريبات لياقة وتغذية رياضية"
+      }
+    ],
+    "home_goods": [
+      {
+        "id": "home_nour_furniture",
+        "name": "معرض النور للأثاث",
+        "location": "شارع بورسعيد، دكرنس",
+        "image": "assets/images/businesses/grocery.jpg",
+        "rating": 4.7,
+        "views": 540,
+        "description": "أثاث منزلي ومكتبي وتقسيط ميسر"
+      },
+      {
+        "id": "home_bazar",
+        "name": "بازار البيت",
+        "location": "شارع النصر، دكرنس",
+        "image": "assets/images/businesses/grocery.jpg",
+        "rating": 4.5,
+        "views": 280,
+        "description": "أدوات منزلية ومطبخية ومستلزمات النظافة",
+        "is_new": true
+      },
+      {
+        "id": "home_harmain_goods",
+        "name": "مخبز الحرمين",
+        "location": "شارع الترعة، دكرنس",
+        "image": "assets/images/businesses/bakery.jpg",
+        "rating": 4.7,
+        "views": 310,
+        "description": "خبز طازج وحلويات يومية"
+      }
+    ],
+    "services": [
+      {
+        "id": "services_electric",
+        "name": "النور للكهرباء والصيانة",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/electronics.jpg",
+        "rating": 4.6,
+        "views": 470,
+        "description": "تركيب وصيانة كهرباء المنازل والمحلات",
+        "is_verified": true
+      },
+      {
+        "id": "services_plumbing",
+        "name": "سباكة دكرنس السريعة",
+        "location": "شارع المستشفى، دكرنس",
+        "image": "assets/images/businesses/car.jpg",
+        "rating": 4.4,
+        "views": 260,
+        "description": "سباكة وتسليك وصيانة فورية"
+      },
+      {
+        "id": "services_delivery",
+        "name": "توصيل النيل",
+        "location": "ميدان الساعة، دكرنس",
+        "image": "assets/images/businesses/car.jpg",
+        "rating": 4.5,
+        "views": 390,
+        "description": "توصيل مشتريات وطرود داخل دكرنس",
+        "is_new": true
+      }
+    ],
+    "education": [
+      {
+        "id": "education_elite_center",
+        "name": "سنتر النخبة",
+        "location": "شارع الجيش، دكرنس",
+        "image": "assets/images/businesses/lab.jpg",
+        "rating": 4.8,
+        "views": 610,
+        "description": "دروس تقوية لجميع المراحل الدراسية",
+        "is_verified": true
+      },
+      {
+        "id": "education_languages",
+        "name": "أكاديمية اللغات",
+        "location": "شارع بورسعيد، دكرنس",
+        "image": "assets/images/businesses/lab.jpg",
+        "rating": 4.6,
+        "views": 340,
+        "description": "كورسات إنجليزي وفرنسي للمبتدئين",
+        "is_new": true
+      },
+      {
+        "id": "education_computer",
+        "name": "مركز دكرنس للكمبيوتر",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/electronics.jpg",
+        "rating": 4.5,
+        "views": 290,
+        "description": "تدريب حاسب آلي ومهارات رقمية"
+      }
+    ],
+    "government": [
+      {
+        "id": "government_post",
+        "name": "مكتب بريد دكرنس",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/government.jpg",
+        "rating": 4.3,
+        "views": 720,
+        "description": "خدمات البريد والحوالات والطرود",
+        "is_verified": true
+      },
+      {
+        "id": "government_civil",
+        "name": "الشهر العقاري",
+        "location": "شارع المستشفى، دكرنس",
+        "image": "assets/images/businesses/government.jpg",
+        "rating": 4.1,
+        "views": 480,
+        "description": "توثيق العقود والخدمات العقارية"
+      },
+      {
+        "id": "government_council",
+        "name": "مجلس مدينة دكرنس",
+        "location": "وسط المدينة، دكرنس",
+        "image": "assets/images/businesses/government.jpg",
+        "rating": 4.0,
+        "views": 890,
+        "description": "خدمات المواطنين والتراخيص المحلية"
+      }
+    ],
+    "religion_society": [
+      {
+        "id": "religion_nour_mosque",
+        "name": "مسجد النور",
+        "location": "شارع النصر، دكرنس",
+        "image": "assets/images/businesses/community.jpg",
+        "rating": 4.9,
+        "views": 560,
+        "description": "مسجد جامع وخدمات مجتمعية",
+        "is_verified": true
+      },
+      {
+        "id": "religion_charity",
+        "name": "جمعية الخير لدكرنس",
+        "location": "شارع بورسعيد، دكرنس",
+        "image": "assets/images/businesses/community.jpg",
+        "rating": 4.7,
+        "views": 320,
+        "description": "مساعدات اجتماعية وأنشطة تطوعية"
+      },
+      {
+        "id": "religion_culture",
+        "name": "قصر ثقافة دكرنس",
+        "location": "وسط المدينة، دكرنس",
+        "image": "assets/images/businesses/community.jpg",
+        "rating": 4.4,
+        "views": 410,
+        "description": "أنشطة ثقافية وورش للأطفال"
+      }
+    ],
+    "transport": [
+      {
+        "id": "transport_taxi",
+        "name": "مكتب تاكسي دكرنس",
+        "location": "ميدان الساعة، دكرنس",
+        "image": "assets/images/businesses/car.jpg",
+        "rating": 4.3,
+        "views": 680,
+        "description": "تاكسي داخل المدينة ومشاوير خارجية",
+        "is_verified": true
+      },
+      {
+        "id": "transport_fast",
+        "name": "النقل السريع",
+        "location": "شارع الجيش، دكرنس",
+        "image": "assets/images/businesses/car.jpg",
+        "rating": 4.5,
+        "views": 390,
+        "description": "نقل ركاب وطرود بأسعار مناسبة",
+        "is_new": true
+      },
+      {
+        "id": "transport_nile",
+        "name": "توصيل النيل",
+        "location": "شارع الجمهورية، دكرنس",
+        "image": "assets/images/businesses/car.jpg",
+        "rating": 4.6,
+        "views": 450,
+        "description": "توصيل طلبات ومشتريات سريع"
+      }
+    ]
+  }
+}

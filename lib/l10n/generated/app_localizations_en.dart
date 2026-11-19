@@ -566,5 +566,492 @@ class AppLocalizationsEn extends AppLocalizations {
   String get currencyEgp => 'EGP';
 
   @override
+  String get businessesTitle => 'Businesses';
+
+  @override
+  String get pressBackAgainToExit => 'Press back again to exit the app';
+
+  @override
+  String get businessesAllLabel => 'All';
+
+  @override
+  String get businessesSearchHint => 'Search for a business or place...';
+
+  @override
+  String get businessesNoSearchResults => 'No businesses match your search.';
+
+  @override
+  String get businessesCountLabel => 'businesses';
+
+  @override
+  String get businessesAddCta => 'Add business';
+
+  @override
+  String get businessesAddTitle => 'Add a new business';
+
+  @override
+  String get businessesFormName => 'Business name';
+
+  @override
+  String get businessesFormLocation => 'Address';
+
+  @override
+  String get businessesFormDescription => 'Short description';
+
+  @override
+  String get businessesFormPhone => 'Contact number (optional)';
+
+  @override
+  String get businessesFormCategory => 'Category';
+
+  @override
+  String get businessesFormRequired => 'This field is required.';
+
+  @override
+  String get businessesFormIntro =>
+      'Enter the business details. They will not be saved until the publishing service is connected.';
+
+  @override
+  String get businessesFormSubmit => 'Submit business';
+
+  @override
+  String get businessesCreateUnavailableTitle =>
+      'Publishing is not available yet';
+
+  @override
+  String get businessesCreateUnavailableMessage =>
+      'Your details were validated, but saving businesses will be available after the backend is connected.';
+
+  @override
+  String get businessesFormDiscardTitle => 'Discard changes?';
+
+  @override
+  String get businessesFormDiscardMessage =>
+      'The business details you entered will be lost.';
+
+  @override
+  String get businessesFormDiscardConfirm => 'Exit';
+
+  @override
+  String get businessesFormContinue => 'Keep editing';
+
+  @override
+  String get businessDetailsTitle => 'Business details';
+
+  @override
+  String get businessAboutTitle => 'About';
+
+  @override
+  String get businessLocationTitle => 'Location';
+
+  @override
+  String get businessContactTitle => 'Contact';
+
+  @override
+  String get businessRatingLabel => 'Rating';
+
+  @override
+  String get businessesEmpty => 'There are no businesses in this section yet.';
+
+  @override
+  String get businessesErrorMessage =>
+      'Could not load businesses. Please try again.';
+
+  @override
+  String get businessesNotFound => 'This business could not be found.';
+
+  @override
+  String get businessContactUnavailable =>
+      'No contact details are available for this business.';
+
+  @override
+  String get businessMapUnavailable =>
+      'The location is shown as text; the map will be available once the maps service is connected.';
+
+  @override
+  String get jobsTitle => 'Jobs';
+
+  @override
+  String get jobsVacanciesTab => 'Jobs';
+
+  @override
+  String get jobsCandidatesTab => 'Available for work';
+
+  @override
+  String get jobsSearchVacanciesHint => 'Search jobs or companies...';
+
+  @override
+  String get jobsSearchCandidatesHint => 'Search by name or skill...';
+
+  @override
+  String get jobsAllCategories => 'All';
+
+  @override
+  String get jobsFilters => 'Filters';
+
+  @override
+  String get jobsClearFilters => 'Clear filters';
+
+  @override
+  String jobsResultsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count results',
+      one: '1 result',
+      zero: 'No results',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get jobsVacanciesEmpty => 'No jobs are available right now.';
+
+  @override
+  String get jobsCandidatesEmpty => 'No candidates are available right now.';
+
+  @override
+  String get jobsNoSearchResults => 'No results match your search or filters.';
+
+  @override
+  String get jobsErrorMessage => 'We could not load jobs. Please try again.';
+
+  @override
+  String get jobsFilterCategory => 'Category';
+
+  @override
+  String get jobsFilterEmploymentType => 'Employment type';
+
+  @override
+  String get jobsFilterAvailability => 'Availability';
+
+  @override
+  String get jobsFilterSort => 'Sort';
+
+  @override
+  String get jobsSortNewest => 'Newest';
+
+  @override
+  String get jobsSortSalaryHigh => 'Highest salary';
+
+  @override
+  String get jobsSortSalaryLow => 'Lowest salary';
+
+  @override
+  String get jobsSortExperienceHigh => 'Most experienced';
+
+  @override
+  String get jobsEmploymentFullTime => 'Full time';
+
+  @override
+  String get jobsEmploymentPartTime => 'Part time';
+
+  @override
+  String get jobsEmploymentContract => 'Contract';
+
+  @override
+  String get jobsEmploymentInternship => 'Internship';
+
+  @override
+  String get jobsEmploymentFreelance => 'Freelance';
+
+  @override
+  String get jobsAvailabilityNow => 'Available now';
+
+  @override
+  String get jobsAvailabilityOpen => 'Open to offers';
+
+  @override
+  String get jobsApplyTitle => 'Apply for this job';
+
+  @override
+  String get jobsApplyInstructions => 'How to apply';
+
+  @override
+  String get jobsContactTitle => 'Contact';
+
+  @override
+  String get jobsContactCall => 'Call';
+
+  @override
+  String get jobsContactWhatsapp => 'WhatsApp';
+
+  @override
+  String get jobsContactEmail => 'Email';
+
+  @override
+  String get jobsContactUnavailable => 'No contact information is available.';
+
+  @override
+  String get jobsContactCopied => 'Contact information copied.';
+
+  @override
+  String get jobsContactCopyNote =>
+      'Contact details are copied; direct calling is unavailable until the calling service is connected.';
+
+  @override
+  String get jobsCompanyTitle => 'About the company';
+
+  @override
+  String get jobsDescriptionTitle => 'Job description';
+
+  @override
+  String get jobsResponsibilitiesTitle => 'Responsibilities';
+
+  @override
+  String get jobsRequirementsTitle => 'Requirements';
+
+  @override
+  String get jobsExperienceLabel => 'Experience required';
+
+  @override
+  String jobsExperienceYears(int years) {
+    String _temp0 = intl.Intl.pluralLogic(
+      years,
+      locale: localeName,
+      other: '$years years',
+      one: '1 year',
+      zero: 'Less than a year',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get jobsSalaryLabel => 'Salary';
+
+  @override
+  String get jobsSalaryNotDisclosed => 'Salary not disclosed';
+
+  @override
+  String jobsSalaryRange(String min, String max, String currency) {
+    return '$min - $max $currency';
+  }
+
+  @override
+  String jobsSalaryFrom(String min, String currency) {
+    return 'From $min $currency';
+  }
+
+  @override
+  String get jobsSalaryPerMonth => 'per month';
+
+  @override
+  String get jobsSalaryPerDay => 'per day';
+
+  @override
+  String get jobsSalaryPerHour => 'per hour';
+
+  @override
+  String get jobsSalaryPerYear => 'per year';
+
+  @override
+  String get jobsPublishedLabel => 'Published';
+
+  @override
+  String get jobsPublishedToday => 'Posted today';
+
+  @override
+  String get jobsPublishedYesterday => 'Posted yesterday';
+
+  @override
+  String jobsPublishedDaysAgo(int count) {
+    return 'Posted $count days ago';
+  }
+
+  @override
+  String get jobsLocationLabel => 'Location';
+
+  @override
+  String get jobsCategoryLabel => 'Category';
+
+  @override
+  String get jobsVerifiedEmployer => 'Verified employer';
+
+  @override
+  String get jobsFeaturedBadge => 'Featured';
+
+  @override
+  String get jobsEmploymentTypeLabel => 'Employment type';
+
+  @override
+  String get jobsViewDetails => 'View details';
+
+  @override
+  String get jobsAddListing => 'Add listing';
+
+  @override
+  String get jobsCreateVacancyTitle => 'Post a job';
+
+  @override
+  String get jobsCreateCandidateTitle => 'Create availability profile';
+
+  @override
+  String get jobsCreateVacancySubtitle =>
+      'Fill in the job details. Nothing is sent until the publishing service is connected.';
+
+  @override
+  String get jobsCreateCandidateSubtitle =>
+      'Fill in your professional details. Nothing is sent until the publishing service is connected.';
+
+  @override
+  String get jobsCreateUnavailableTitle => 'Publishing unavailable';
+
+  @override
+  String get jobsCreateUnavailableMessage =>
+      'The job publishing service is not connected yet, and no data was submitted.';
+
+  @override
+  String get jobsFormRequired => 'This field is required.';
+
+  @override
+  String get jobsFormTitleLabel => 'Job title';
+
+  @override
+  String get jobsFormCompanyLabel => 'Company name';
+
+  @override
+  String get jobsFormDescriptionLabel => 'Job description';
+
+  @override
+  String get jobsFormResponsibilitiesLabel => 'Responsibilities (one per line)';
+
+  @override
+  String get jobsFormRequirementsLabel => 'Requirements (one per line)';
+
+  @override
+  String get jobsFormCategoryLabel => 'Category';
+
+  @override
+  String get jobsFormEmploymentTypeLabel => 'Employment type';
+
+  @override
+  String get jobsFormSalaryMinLabel => 'Minimum salary';
+
+  @override
+  String get jobsFormSalaryMaxLabel => 'Maximum salary';
+
+  @override
+  String get jobsFormLocationLabel => 'Location';
+
+  @override
+  String get jobsFormPhoneLabel => 'Contact phone';
+
+  @override
+  String get jobsFormEmailLabel => 'Email';
+
+  @override
+  String get jobsFormApplicationLabel => 'Application instructions';
+
+  @override
+  String get jobsFormSubmit => 'Submit listing';
+
+  @override
+  String get jobsFormNameLabel => 'Full name';
+
+  @override
+  String get jobsFormProfessionalTitleLabel => 'Professional title';
+
+  @override
+  String get jobsFormSkillsLabel => 'Skills (comma separated)';
+
+  @override
+  String get jobsFormExperienceYearsLabel => 'Years of experience';
+
+  @override
+  String get jobsFormPreferredLocationLabel => 'Preferred location';
+
+  @override
+  String get jobsFormDesiredTypeLabel => 'Desired employment type';
+
+  @override
+  String get jobsFormSummaryLabel => 'Professional summary';
+
+  @override
+  String get jobsFormEducationLabel => 'Education';
+
+  @override
+  String get jobsFormCvLabel => 'CV';
+
+  @override
+  String get jobsFormNumberInvalid => 'Enter a valid number.';
+
+  @override
+  String get jobsFormEmailInvalid => 'Enter a valid email address.';
+
+  @override
+  String get jobsFormCvUnavailable =>
+      'CV upload will be available after the files service is connected.';
+
+  @override
+  String get jobsFormDiscardTitle => 'Discard changes?';
+
+  @override
+  String get jobsFormDiscardMessage =>
+      'You have unsaved data. Do you want to leave?';
+
+  @override
+  String get jobsFormDiscardConfirm => 'Leave';
+
+  @override
+  String get jobsFormContinue => 'Keep editing';
+
+  @override
+  String get jobsCandidateSkillsTitle => 'Skills';
+
+  @override
+  String get jobsCandidateExperienceTitle => 'Work experience';
+
+  @override
+  String get jobsCandidateEducationTitle => 'Education';
+
+  @override
+  String get jobsCandidateCertificatesTitle => 'Certificates';
+
+  @override
+  String get jobsCandidateSummaryTitle => 'Professional summary';
+
+  @override
+  String get jobsCandidateAvailabilityLabel => 'Availability';
+
+  @override
+  String get jobsCandidateDesiredTypeLabel => 'Desired employment';
+
+  @override
+  String get jobsCandidatePreferredLocationLabel => 'Preferred location';
+
+  @override
+  String get jobsCandidateCvTitle => 'CV';
+
+  @override
+  String get jobsCandidateCvUnavailable =>
+      'No CV was attached; the available professional information is shown instead.';
+
+  @override
+  String get jobsDetailsTitle => 'Job details';
+
+  @override
+  String get jobsCandidateDetailsTitle => 'Candidate profile';
+
+  @override
+  String get jobsDetailsNotFound => 'This item could not be found.';
+
+  @override
+  String get jobsFilterSheetTitle => 'Filter results';
+
+  @override
+  String get jobsApplyFilter => 'Apply';
+
+  @override
+  String get jobsReset => 'Reset';
+
+  @override
+  String jobsFromTo(String from, String to) {
+    return '$from - $to';
+  }
+
+  @override
+  String get jobsPresent => 'Present';
+
+  @override
   String get ok => 'OK';
 }

@@ -13,6 +13,7 @@ class HomePreviewDataSource implements HomeDataSource {
   }) : _bundle = bundle ?? rootBundle;
 
   static const String assetPath = 'assets/data/home_preview.json';
+  static const String catalogAssetPath = 'assets/data/businesses_preview.json';
 
   final AssetBundle _bundle;
   final Duration delay;
@@ -24,12 +25,10 @@ class HomePreviewDataSource implements HomeDataSource {
     }
 
     try {
-      final raw = await _bundle.loadString(assetPath);
-      final decoded = jsonDecode(raw);
-      if (decoded is! Map<String, dynamic>) {
-        throw const ParsingException(
-          message: 'The home preview data is not a JSON object.',
-        );
+      final decoded = await _loadJsonObject(assetPath);
+      final catalog = await _loadOptionalCatalog();
+      if (catalog != null) {
+        decoded['businesses'] = catalog;
       }
       return HomeContentModel.fromJson(decoded);
     } on AppException {
@@ -40,6 +39,27 @@ class HomePreviewDataSource implements HomeDataSource {
       Error.throwWithStackTrace(ParsingException(cause: error), stackTrace);
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(UnknownException(cause: error), stackTrace);
+    }
+  }
+
+  Future<Map<String, dynamic>> _loadJsonObject(String path) async {
+    final raw = await _bundle.loadString(path);
+    final decoded = jsonDecode(raw);
+    if (decoded is! Map<String, dynamic>) {
+      throw ParsingException(
+        message: 'The preview data at $path is not a JSON object.',
+      );
+    }
+    return decoded;
+  }
+
+  Future<Map<String, dynamic>?> _loadOptionalCatalog() async {
+    try {
+      final catalog = await _loadJsonObject(catalogAssetPath);
+      final categories = catalog['categories'];
+      return categories is Map<String, dynamic> ? categories : null;
+    } catch (_) {
+      return null;
     }
   }
 }

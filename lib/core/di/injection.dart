@@ -7,12 +7,19 @@ import '../../features/categories/data/datasources/categories_data_source.dart';
 import '../../features/categories/data/datasources/mock_categories_data_source.dart';
 import '../../features/categories/data/repositories/categories_repository_impl.dart';
 import '../../features/categories/domain/repositories/categories_repository.dart';
+import '../../features/businesses/presentation/cubit/business_details_cubit.dart';
 import '../../features/categories/presentation/cubit/categories_cubit.dart';
 import '../../features/home/data/datasources/home_data_source.dart';
 import '../../features/home/data/datasources/home_preview_data_source.dart';
 import '../../features/home/data/repositories/home_repository_impl.dart';
 import '../../features/home/domain/repositories/home_repository.dart';
 import '../../features/home/presentation/cubit/home_cubit.dart';
+import '../../features/jobs/data/datasources/jobs_data_source.dart';
+import '../../features/jobs/data/datasources/jobs_preview_data_source.dart';
+import '../../features/jobs/data/repositories/jobs_repository_impl.dart';
+import '../../features/jobs/domain/repositories/jobs_repository.dart';
+import '../../features/jobs/presentation/cubit/job_details_cubit.dart';
+import '../../features/jobs/presentation/cubit/jobs_cubit.dart';
 import '../../features/offers/data/datasources/offers_data_source.dart';
 import '../../features/offers/data/datasources/offers_preview_data_source.dart';
 import '../../features/offers/data/repositories/shared_preferences_offer_favorites_repository.dart';
@@ -57,6 +64,17 @@ Future<void> configureDependencies() async {
       () => HomeRepositoryImpl(getIt<HomeDataSource>()),
     )
     ..registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepository>()))
+    ..registerFactory<BusinessDetailsCubit>(
+      () => BusinessDetailsCubit(getIt<HomeRepository>()),
+    )
+    ..registerLazySingleton<JobsDataSource>(JobsPreviewDataSource.new)
+    ..registerLazySingleton<JobsRepository>(
+      () => JobsRepositoryImpl(getIt<JobsDataSource>()),
+    )
+    ..registerFactory<JobsCubit>(() => JobsCubit(getIt<JobsRepository>()))
+    ..registerFactory<JobDetailsCubit>(
+      () => JobDetailsCubit(getIt<JobsRepository>()),
+    )
     ..registerLazySingleton<ProfileDataSource>(ProfilePreviewDataSource.new)
     ..registerLazySingleton<ProfileRepository>(
       () => ProfileRepositoryImpl(getIt<ProfileDataSource>()),
